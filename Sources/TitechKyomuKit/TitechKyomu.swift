@@ -12,4 +12,18 @@ struct TitechKyomu {
     public init(urlSession: URLSession, userAgent: String = TitechKyomu.defaultUserAgent) {
         self.httpClient = HTTPClientImpl(urlSession: urlSession, userAgent: userAgent)
     }
+    
+    #if DEBUG
+    /// Test時のMock用
+    init(mockHtml: String) {
+        self.httpClient = HTTPClientMock(html: mockHtml)
+    }
+    #endif
+    
+    /// 実装サンプルです。後で消してください
+    public func example() async throws -> Bool {
+        let html = try await httpClient.send(ExampleRequest())
+        
+        return html == "Success\n"
+    }
 }
