@@ -8,24 +8,24 @@ import Kanna
 struct TitechKyomu {
     private let httpClient: HTTPClient
     public static let defaultUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
-    
+
     public init(urlSession: URLSession, userAgent: String = TitechKyomu.defaultUserAgent) {
         self.httpClient = HTTPClientImpl(urlSession: urlSession, userAgent: userAgent)
     }
     
-#if DEBUG
+    #if DEBUG
     /// Test時のMock用
     init(mockHtml: String) {
         self.httpClient = HTTPClientMock(html: mockHtml)
     }
-#endif
+    #endif
     
     public func fetchKyomuCourseData() async throws -> [KyomuCourse] {
         let html = try await httpClient.send(ReportCheckPageRequest())
         return try await parseReportCheckPage(html: html)
     }
     
-    internal func parseReportCheckPage(html: String) async throws -> [KyomuCourse] {
+    func parseReportCheckPage(html: String) async throws -> [KyomuCourse] {
         let doc = try HTML(html: html, encoding: .utf8)
         
         return doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_grid tr:not(:first-of-type)").compactMap { row in
