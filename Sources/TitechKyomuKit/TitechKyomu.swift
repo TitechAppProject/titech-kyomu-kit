@@ -20,13 +20,12 @@ struct TitechKyomu {
     }
 #endif
     
-    public func fetchRegisteredCoursePage() async throws -> String {
+    public func fetchKyomuCourseData() async throws -> [KyomuCourse] {
         let html = try await httpClient.send(ReportCheckPageRequest())
-        
-        return html
+        return try await parseReportCheckPage(html: html)
     }
     
-    public func parse(html: String) async throws -> [Course] {
+    internal func parseReportCheckPage(html: String) async throws -> [KyomuCourse] {
         let doc = try HTML(html: html, encoding: .utf8)
         
         return doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_grid tr:not(:first-of-type)").compactMap { row in
@@ -41,16 +40,16 @@ struct TitechKyomu {
                 return nil
             }
             let periodRegexpResult = tds[2].matches(#"([日月火水木金土]|Sun|Mon|Tue|Wed|Thu|Fri|Sat)(\d)-(\d)\s?(?:[(（]([^()（）]+)[)）])?"#) ?? []
-            let periods = periodRegexpResult.map { result -> CoursePeriod in
-                        CoursePeriod(
-                            day: DayOfWeek.convert(result[0]),
-                            start: Int(result[1]) ?? -1,
-                            end: Int(result[2]) ?? -1,
-                            location: result[3]
-                        )
-                    }
+            let periods = periodRegexpResult.map { result -> KyomuCoursePeriod in
+                KyomuCoursePeriod(
+                    day: DayOfWeek.convert(result[0]),
+                    start: Int(result[1]) ?? -1,
+                    end: Int(result[2]) ?? -1,
+                    location: result[3]
+                )
+            }
             
-            return Course(name: tds[6], periods: periods, quarters: Course.convert2Quarters(tds[1]), code: tds[5])
+            return KyomuCourse(name: tds[6], periods: periods, quarters: KyomuCourse.convert2Quarters(tds[1]), code: tds[5])
         }
     }
 }

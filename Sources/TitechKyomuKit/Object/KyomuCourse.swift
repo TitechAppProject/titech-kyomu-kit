@@ -1,8 +1,8 @@
 import Foundation
 
-public struct Course: Equatable, Codable {
+public struct KyomuCourse: Equatable, Codable {
     public let name: String
-    public let periods: [CoursePeriod]
+    public let periods: [KyomuCoursePeriod]
     public let quarters: [Int]
     public let code: String
     
@@ -21,7 +21,7 @@ public struct Course: Equatable, Codable {
     }
 }
 
-public struct CoursePeriod: Equatable, Codable {
+public struct KyomuCoursePeriod: Equatable, Codable {
     public let day: DayOfWeek
     public let start: Int
     public let end: Int
