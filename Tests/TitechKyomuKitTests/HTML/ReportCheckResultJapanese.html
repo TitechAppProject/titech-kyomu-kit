@@ -1,0 +1,767 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, pre-check=0, post-check=0" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="-1" /><meta name="robots" content="noindex" />
+    <link href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.1/themes/redmond/jquery-ui.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js" ></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.3/jquery-ui.min.js" ></script>
+<link href="/Titech/Content/themes/base/jquery-ui.css" type="text/css" rel="stylesheet" /><link href="/Titech/Content/bootstrap.css?20180726" type="text/css" rel="stylesheet" /><link href="/Titech/Scripts/theme/base/jquery-ui.css" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/base.css?q=1&amp;d=20220826" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/base3.css?q" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/popUp.css?20220826" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/print.css?20220826" type="text/css" rel="stylesheet" /><title>
+	申告チェック結果
+</title></head>
+<body class="body">
+    <form name="aspnetForm" method="post" action="PID1_3_1.aspx" id="aspnetForm" class="stage">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+
+<script src="../../Scripts/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="../../Scripts/jquery.color.js" type="text/javascript"></script>
+<script src="../../Scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../Scripts/popover.js" type="text/javascript"></script>
+<script src="../../Scripts/noty/packaged/jquery.noty.packaged.min.js" type="text/javascript"></script>
+<script src="../../Scripts/jquery-ui.js" type="text/javascript"></script>
+<script src="../../Scripts/jquery.tbodyscroll.js" type="text/javascript"></script>
+<script src="../../Scripts/JScript.js?20220826" type="text/javascript"></script>
+<script src="../../Scripts/jquery.ui.datepicker-ja.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+$(function() {
+        $('.calendar').datepicker({ dateFormat: 'yy/mm/dd' });
+    });
+$(function() {
+    setupUserAutocomplete('/Titech/Common/Service2.ashx');
+});//]]>
+</script>
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="21E50C06" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdABqBqnZ3t9fds9levWNHLg5MfWTjPRLcMlc9d2cDJ2JRi3g2JCPx5gAZ8WI3GLHhg5giJKIBBosOyyr98TQsTivsbLFdPfyCrxa0tYDAp0MPZOe892sZwABBBmTGop7V7FtbeM8EC6Lc2kCw+1zYzQl8ZpjD93OLqQrLIxVMdyTEg2AqkAWw8q6HczEU/4Mwkr4kt/XOMeWYnYCZZsNGENhr2o2EQ8228P3iW97CHtGIjjJCSmU8nEU2lOu0xCrYFOjJgJsCxu48H6MD6hySQJXNWOEKOVYEuSOD8qHYXrJWDselSgH+sO+mfj8QSx/m1x+Wqg9lClpmtEW7/SbztPozGVCLNnVnmjx48h2w0jqzn4UV8avhKAEF6nBwJyMlNlwb10TwwunFd3Veq5LmGaLv8v7gPXoywXrEsgRX8HMs1g6MVKeYnZHm85iAhCMLXyDjWHvRG6Dl7TxOaLVqFPiTZR/1wkyFSGUF1UeVb77mjAhsIjuS65qKwA+dne7CEWRqY59i+C5OedhGD9HGUBtgxQbS0yD9Thl7sm6WVjYxBz1Zh07knZhK9KsVPqQFZlNvg+Ry" />
+    <div class="headerPopup hideAtPrint">
+        <div class="logo left">
+            <a id="top" name="top" href='/Titech/Student/%E7%A7%91%E7%9B%AE%E7%94%B3%E5%91%8A/PID1_3_1.aspx''>
+                <img id="ctl00_imgLogo" src="../../img/header_img02.jpg" alt="国立大学法人 東京工業大学" border="0" />
+            </a>
+        </div>
+        <div class="right topButton">
+            <div style="padding-top:3px; margin-right:10px;"><span>
+                                
+                                <a id="ctl00_ToEnglish" href="javascript:__doPostBack(&#39;ctl00$ToEnglish&#39;,&#39;&#39;)">English</a>
+                            </span>&nbsp;
+                            &nbsp; 
+                <span id="ctl00_lnkLogout" class="lnkLogout">
+                    
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"/>
+    <div class="mainContents" id="MainContents" style="padding-top: 0px; padding-bottom: 20px;">
+        <div style="visibility: hidden; height:0px; margin-bottom:10px" class="hideAtPrint">
+            <input type="submit" name="ctl00$defaultButton" value="" onclick="return false;" id="ctl00_defaultButton" />
+        </div>
+        <div id="shrinkPreventOuter" class="clearfix">
+            <div id="shrinkPreventInner">
+            </div>
+        </div>
+        <span id="ctl00_lblMessage" class="alertMsg"></span>
+        
+    <h1>
+        申告チェック結果
+    </h1>
+    <div class="hideAtPrint">
+    <div id="menuPrint" style="margin-bottom: 10px">
+        <a onclick="window.print();return false;" id="ctl00_ContentPlaceHolder1_LinkButton12" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$LinkButton12&#39;,&#39;&#39;)">この画面を印刷</a>
+    </div>
+    </div>
+    <br />
+    <div id="ctl00_ContentPlaceHolder1_CheckResult1_Panel1">
+	
+    
+    
+    
+
+</div>
+<br />
+<div id="ctl00_ContentPlaceHolder1_CheckResult1_div">
+
+<div class="tableSet02 clearfix">
+    <div id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_divTerm">
+    <div id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl13_div" class="pickUp2">
+    <table width="100%">
+        <tr>
+            <td width="50%" style="border-right-width:0px;">
+                <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl13_lblTerm">2022前学期</span>
+            </td>
+            <td width="50%" align="right" class="hideAtPrint" style="text-align: right; font-size: small; color: Black; font-weight: normal;border-left-width:0px;">
+                &nbsp;&nbsp;&nbsp;
+                
+                <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl13_spanHistory">
+                    過去分の参照
+                    <select name="ctl00$ContentPlaceHolder1$CheckResult1$ctl08$ctl13$drpTerm" id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl13_drpTerm">
+	<option selected="selected" value="20212" Group class>2021後学期</option>
+	<option value="20211" Group class>2021前学期</option>
+	<option value="20202" Group class>2020後学期</option>
+	<option value="20201" Group class>2020前学期</option>
+
+</select>
+                    <input type="submit" name="ctl00$ContentPlaceHolder1$CheckResult1$ctl08$ctl13$btnDisp" value="表示" id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl13_btnDisp" />
+                </span>
+            </td>
+        </tr>
+    </table>
+</div>
+</div>
+    <div id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_divKako" class="comment right" style="margin-top: -10px">
+        
+    </div>
+    <h2>
+        申告単位
+    </h2>
+    <div id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_divGakubu">
+        <div id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_divZengaku" class="dataBox042">
+            <div class="showAtPrintDiv" style="padding-top: 10px">&nbsp;</div>
+            <h3 style="margin-top: 0px">
+                教養科目群
+            </h3>
+            
+                    <table>
+                        <tr>
+                            <th>
+                                科目区分
+                            </th>
+                            <th style="width: 70px">
+                                申告単位
+                            </th>
+                        </tr>
+                
+                    <tr>
+                        <td>
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl01_Label7">文系教養科目</span>
+                            <span></span>
+                            <span class="showAtPrintDiv"></span>
+                        </td>
+                        <td id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl01_tdTani" style="text-align: right">
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl01_Label1">0</span>
+                        </td>
+
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl02_Label7">英語科目</span>
+                            <span></span>
+                            <span class="showAtPrintDiv"></span>
+                        </td>
+                        <td id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl02_tdTani" style="text-align: right">
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl02_Label1">0</span>
+                        </td>
+
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl03_Label7">第二外国語科目</span>
+                            <span></span>
+                            <span class="showAtPrintDiv"></span>
+                        </td>
+                        <td id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl03_tdTani" style="text-align: right">
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl03_Label1">0</span>
+                        </td>
+
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl04_Label7">日本語・日本文化科目</span>
+                            <span></span>
+                            <span class="showAtPrintDiv"></span>
+                        </td>
+                        <td id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl04_tdTani" style="text-align: right">
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl04_Label1">0</span>
+                        </td>
+
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl05_Label7">教職科目</span>
+                            <span>※</span>
+                            <span class="showAtPrintDiv"> ※4</span>
+                        </td>
+                        <td id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl05_tdTani" style="text-align: right" class=" noCount">
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl05_Label1">0</span>
+                        </td>
+
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl06_Label7">広域教養科目</span>
+                            <span></span>
+                            <span class="showAtPrintDiv"></span>
+                        </td>
+                        <td id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl06_tdTani" style="text-align: right">
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl06_Label1">0</span>
+                        </td>
+
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl07_Label7">特定教育課程専用教養科目</span>
+                            <span></span>
+                            <span class="showAtPrintDiv"></span>
+                        </td>
+                        <td id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl07_tdTani" style="text-align: right">
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl07_Label1">0</span>
+                        </td>
+
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl08_Label7">理工系教養科目</span>
+                            <span></span>
+                            <span class="showAtPrintDiv"></span>
+                        </td>
+                        <td id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl08_tdTani" style="text-align: right">
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl08_Label1">0</span>
+                        </td>
+
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl09_Label7">学部教養科目</span>
+                            <span></span>
+                            <span class="showAtPrintDiv"></span>
+                        </td>
+                        <td id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl09_tdTani" style="text-align: right">
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl09_Label1">0</span>
+                        </td>
+
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl10_Label7">学部専門科目</span>
+                            <span></span>
+                            <span class="showAtPrintDiv"></span>
+                        </td>
+                        <td id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl10_tdTani" style="text-align: right">
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl10_Label1">0</span>
+                        </td>
+
+                    </tr>
+                
+                    <tr>
+                        <th style="text-align: center">
+                            小計
+                        </th>
+                        <td style="text-align: right">
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptZengaku_ctl11_lbl単位">0</span>
+                        </td>
+                    </tr>
+                    </table>
+                
+            
+            <div id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_divMsg1_sNew" style="margin-top:-12px">
+                ※　この単位は<span style="color: red">卒業要件等に含まれません。</span><br />
+                系（又は入学年度）によって取扱いが異なりますので、入学年度の<br />
+                <span style="text-decoration:underline">「学修案内」</span>で所属系の課程を確認して下さい。<br />
+                <span class="hideAtPrint">
+                    <a href="http://www.titech.ac.jp/enrolled/life/resources/index.html" target="_blank">http://www.titech.ac.jp/enrolled/life/resources/index.html</a><br />
+                </span>
+            </div>
+            
+            
+            <span style="color: #ff6600">
+                </span>
+            <br />
+            <br />
+            <h3>
+                合計</h3>
+            <table id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_tblGakubu">
+	<tr>
+		<th width="20%">
+                        前学期<br />
+                        申告単位<br/>合計
+                    </th>
+		<td class="tani">
+                        <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_lblTotalG1">17</span>
+                    </td>
+		<th width="20%">
+                        後学期<br />
+                        申告単位<br/>合計
+                    </th>
+		<td class="tani">
+                        <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_lblTotalG2">0</span>
+                    </td>
+		<th style="background-color: #bbcc88" width="20%">
+                        年間<br />
+                        上限単位
+                    </th>
+		<td class="tani">
+                        <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_lblLimitG">56</span>
+                    </td>
+	</tr>
+</table>
+
+            <div id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_divIn">
+                <h3>
+                    大学院課程科目</h3>
+                <table style="width: 100%" class="daigakuinBack">
+                    <tr>
+                        <th style="text-align: center">
+                            大学院課程科目
+                        </th>
+                        <td style="text-align: right; width: 70px">
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_lblInTotal">0</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_divSenmon" class="dataBox052">
+            <h3>
+                        
+                        専門科目群</h3>
+            
+                    <table>
+                        <tr>
+                            <th>
+                                科目区分
+                            </th>
+                            <th>
+                                申告単位
+                            </th>
+                        </tr>
+                
+                    <tr>
+                        <td>
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptSenmon2_ctl01_Label7">講究科目</span>
+                            <span></span>
+                            <span class="showAtPrintDiv"></span>
+                        </td>
+                        <td id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptSenmon2_ctl01_tdTani" class="tani">
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptSenmon2_ctl01_Label1">0</span>
+                        </td>
+
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptSenmon2_ctl02_Label7">研究関連科目</span>
+                            <span></span>
+                            <span class="showAtPrintDiv"></span>
+                        </td>
+                        <td id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptSenmon2_ctl02_tdTani" class="tani">
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptSenmon2_ctl02_Label1">2</span>
+                        </td>
+
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptSenmon2_ctl03_Label7">専門科目</span>
+                            <span></span>
+                            <span class="showAtPrintDiv"></span>
+                        </td>
+                        <td id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptSenmon2_ctl03_tdTani" class="tani">
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptSenmon2_ctl03_Label1">15</span>
+                        </td>
+
+                    </tr>
+                
+                    <tr>
+                        <th style="text-align: center">
+                            小計
+                        </th>
+                        <td class="tani">
+                            <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_rptSenmon2_ctl04_lbl単位">17</span>
+                        </td>
+                    </tr>
+                    </table>
+                
+            
+            
+            <div class="hideAtPrint">
+                <table style="border: 0px;">
+                    <tr>
+                        <td class="noCount" style="border: 1px solid #4BBBCD; width: 30px; height: 10px; padding: 0px;">
+                            &nbsp;
+                        </td>
+                        <td style="background-color: #BEE6ED; border: solid 1px #BEE6ED; border-top: solid1 1px #4BBBCD">
+                            ：この科目区分の申告単位は年間上限単位数に計上されません。
+                        </td>
+                    </tr>
+                    
+                </table>
+            </div>
+            <div class="showAtPrintDiv">
+                <table style="border: 0px;">
+                    <tr>
+                        <td style="border: 0px; padding: 0px;">
+                            <span class="hideAtPrint" style="border: 1px solid #4BBBCD; height: 20px; padding: 5px;">&nbsp;&nbsp;</span>
+                            <span class="showAtPrintDiv">※4</span>
+                        </td>
+                        <td style="border: 0px; border-top-width: 0px">
+                            ：この科目区分の申告単位は年間上限単位数に計上されません。
+                        </td>
+                    </tr>
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</div>
+</div>
+<br />
+<div id="ctl00_ContentPlaceHolder1_CheckResult1_divColorSample">
+ <span class="timetableColorSample" style="background-color: white">
+        本登録可能</span><span class="timetableColorSample timetableBunkei">
+            本登録可能(文系教養科目履修予約で許可され、自動的に反映されている科目)</span><span id="ctl00_ContentPlaceHolder1_CheckResult1_pnlSample"><span class="timetableColorSample timetableAlert22">
+            本登録可能(承認待ち)</span> <span class="timetableColorSample timetableAlert3">
+                本登録可能(要承認申請)</span> <span class="timetableColorSample timetableAlert2">
+                    承認待ち</span> <span class="timetableColorSample timetableAlert1">
+                        要承認申請</span> </span><span class="timetableColorSample timetableError">
+                            本登録不可</span>
+</div>
+<br />
+<div class="tableSet01">
+    <div>
+	<table cellspacing="0" rules="all" border="1" id="ctl00_ContentPlaceHolder1_CheckResult1_grid" width="100%">
+		<tr align="center">
+			<th scope="col">学士課程／<br/>
+大学院課程<br /><div class="categorySort">
+				<a title="降順" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl27&#39;,&#39;&#39;)">▼</a>/<a title="昇順" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl29&#39;,&#39;&#39;)">▲</a>
+			</div></th><th scope="col">Q<br /><div class="categorySort">
+				<a title="降順" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl30&#39;,&#39;&#39;)">▼</a>/<a title="昇順" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl32&#39;,&#39;&#39;)">▲</a>
+			</div></th><th scope="col">曜日・時限<br /><div class="categorySort">
+				<a title="降順" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl33&#39;,&#39;&#39;)">▼</a>/<a title="昇順" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl35&#39;,&#39;&#39;)">▲</a>
+			</div></th><th scope="col">科目区分<br /><div class="categorySort">
+				<a title="降順" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl36&#39;,&#39;&#39;)">▼</a>/<a title="昇順" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl38&#39;,&#39;&#39;)">▲</a>
+			</div></th><th scope="col">科目コード番台<br /><div class="categorySort">
+				<a title="降順" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl42&#39;,&#39;&#39;)">▼</a>/<a title="昇順" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl44&#39;,&#39;&#39;)">▲</a>
+			</div></th><th scope="col">科目コード<br /><div class="categorySort">
+				<a title="降順" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl45&#39;,&#39;&#39;)">▼</a>/<a title="昇順" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl47&#39;,&#39;&#39;)">▲</a>
+			</div></th><th scope="col">授業科目名</th><th scope="col">授業担当教員</th><th scope="col">単位</th><th scope="col">結果<br /><div class="categorySort">
+				<a title="降順" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl48&#39;,&#39;&#39;)">▼</a>/<a title="昇順" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl50&#39;,&#39;&#39;)">▲</a>
+			</div></th><th scope="col">チェック内容<br /><div class="categorySort">
+				<a title="降順" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl51&#39;,&#39;&#39;)">▼</a>/<a title="昇順" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl53&#39;,&#39;&#39;)">▲</a>
+			</div></th><th scope="col">エラー詳細</th><th scope="col">備考</th>
+		</tr><tr>
+			<td align="center" width="70">
+                    学士課程
+                </td><td align="center" class="  tdQuarter1" width="40">
+                    
+                    1Q
+                </td><td width="120">
+                    月1-2 (S7-202)<br/>木1-2 (S7-202)
+                </td><td width="120">専門科目</td><td align="center" width="60">300</td><td align="left" width="100">
+                    MAT.C302
+                </td><td width="15%">
+                    <div class="hideAtPrint">
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl02_HyperLink1" href="http://www.ocw.titech.ac.jp/index.php?module=General&amp;action=T0300&amp;JWC=202202171&amp;lang=JA&amp;vid=03" target="_blank">分光学 </a>
+                    </div>
+                    <div class="showAtPrintDiv">
+                        分光学 
+                    </div>
+                    
+                </td><td width="12%">
+                    矢野 哲司<br/>北沢 信章
+                </td><td align="center" width="40" nowrap="nowrap">
+                    2-0-0
+                </td><td align="center" width="40">
+                    ○
+                </td><td width="80">
+                    OK
+                </td><td width="120">
+                    
+                </td><td class="minWidth150">
+                    
+                    L(選択)
+                    <div>
+                    </div>
+                    
+                    
+                </td>
+		</tr><tr>
+			<td align="center" width="70">
+                    学士課程
+                </td><td align="center" class="  tdQuarter1" width="40">
+                    
+                    1Q
+                </td><td width="120">
+                    月3-4 (S8-102)<br/>木3-4 (S8-102)
+                </td><td width="120">専門科目</td><td align="center" width="60">300</td><td align="left" width="100">
+                    MAT.P301
+                </td><td width="15%">
+                    <div class="hideAtPrint">
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl03_HyperLink1" href="http://www.ocw.titech.ac.jp/index.php?module=General&amp;action=T0300&amp;JWC=202202204&amp;lang=JA&amp;vid=03" target="_blank">固体物理学(格子系) </a>
+                    </div>
+                    <div class="showAtPrintDiv">
+                        固体物理学(格子系) 
+                    </div>
+                    
+                </td><td width="12%">
+                    早水 裕平
+                </td><td align="center" width="40" nowrap="nowrap">
+                    2-0-0
+                </td><td align="center" width="40">
+                    NG
+                </td><td width="80">
+                    NG
+                </td><td width="120">
+                    
+                </td><td class="minWidth150">
+                    
+                    L(選択)
+                    <div>
+                    </div>
+                    
+                    
+                </td>
+		</tr><tr>
+			<td align="center" width="70">
+                    学士課程
+                </td><td align="center" class="  tdQuarter1" width="40">
+                    
+                    1Q
+                </td><td width="120">
+                    月5-8 (S7-204, 207, 209)<br/>木5-8 (S7-204, 207, 209)
+                </td><td width="120">専門科目</td><td align="center" width="60">300</td><td align="left" width="100">
+                    MAT.C350
+                </td><td width="15%">
+                    <div class="hideAtPrint">
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl04_HyperLink1" href="http://www.ocw.titech.ac.jp/index.php?module=General&amp;action=T0300&amp;JWC=202202185&amp;lang=JA&amp;vid=03" target="_blank">セラミックス実験第一 </a>
+                    </div>
+                    <div class="showAtPrintDiv">
+                        セラミックス実験第一 
+                    </div>
+                    
+                </td><td width="12%">
+                    松下 伸広<br/>山口 晃  他
+                </td><td align="center" width="40" nowrap="nowrap">
+                    0-0-2
+                </td><td align="center" width="40">
+                    ○
+                </td><td width="80">
+                    OK
+                </td><td width="120">
+                    
+                </td><td class="minWidth150">
+                    
+                    A(○)
+                    <div>
+                    </div>
+                    
+                    
+                </td>
+		</tr><tr>
+			<td align="center" width="70">
+                    学士課程
+                </td><td align="center" class="  tdQuarter1" width="40">
+                    
+                    1Q
+                </td><td width="120">
+                    火5-6 (S7-202)<br/>金5-6 (S7-202)
+                </td><td width="120">専門科目</td><td align="center" width="60">300</td><td align="left" width="100">
+                    MAT.C301
+                </td><td width="15%">
+                    <div class="hideAtPrint">
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl05_HyperLink1" href="http://www.ocw.titech.ac.jp/index.php?module=General&amp;action=T0300&amp;JWC=202202170&amp;lang=JA&amp;vid=03" target="_blank">結晶化学（C） </a>
+                    </div>
+                    <div class="showAtPrintDiv">
+                        結晶化学（C） 
+                    </div>
+                    
+                </td><td width="12%">
+                    鶴見 敬章<br/>保科 拓也
+                </td><td align="center" width="40" nowrap="nowrap">
+                    2-0-0
+                </td><td align="center" width="40">
+                    ○
+                </td><td width="80">
+                    OK
+                </td><td width="120">
+                    
+                </td><td class="minWidth150">
+                    
+                    L(選択)
+                    <div>
+                    </div>
+                    
+                    
+                </td>
+		</tr><tr>
+			<td align="center" width="70">
+                    学士課程
+                </td><td align="center" class="  tdQuarter1" width="40">
+                    
+                    1Q
+                </td><td width="120">
+                    集中講義等
+                </td><td width="120">研究関連科目</td><td align="center" width="60">300</td><td align="left" width="100">
+                    MAT.Z381-01
+                </td><td width="15%">
+                    <div class="hideAtPrint">
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl06_HyperLink1" href="http://www.ocw.titech.ac.jp/index.php?module=General&amp;action=T0300&amp;JWC=202202244&amp;lang=JA&amp;vid=03" target="_blank">研究プロジェクト（材料系） C</a>
+                    </div>
+                    <div class="showAtPrintDiv">
+                        研究プロジェクト（材料系） C
+                    </div>
+                    
+                </td><td width="12%">
+                    各 教員
+                </td><td align="center" width="40" nowrap="nowrap">
+                    0-2-0
+                </td><td align="center" width="40">
+                    ○
+                </td><td width="80">
+                    OK
+                </td><td width="120">
+                    
+                </td><td class="minWidth150">
+                    
+                    R(◎)
+                    <div>
+                    </div>
+                    
+                    
+                </td>
+		</tr><tr>
+			<td align="center" width="70">
+                    学士課程
+                </td><td align="center" class="  tdQuarter2" width="40">
+                    
+                    2Q
+                </td><td width="120">
+                    火3-4 (S622)<br/>金3-4 (S622)
+                </td><td width="120">専門科目</td><td align="center" width="60">200</td><td align="left" width="100">
+                    EEE.D211
+                </td><td width="15%">
+                    <div class="hideAtPrint">
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl07_HyperLink1" href="http://www.ocw.titech.ac.jp/index.php?module=General&amp;action=T0300&amp;JWC=202201991&amp;lang=JA&amp;vid=03" target="_blank">半導体物性 </a>
+                    </div>
+                    <div class="showAtPrintDiv">
+                        半導体物性 
+                    </div>
+                    
+                </td><td width="12%">
+                    宮島 晋介<br/>中川 茂樹
+                </td><td align="center" width="40" nowrap="nowrap">
+                    2-0-0
+                </td><td align="center" width="40">
+                    ○
+                </td><td width="80">
+                    OK
+                </td><td width="120">
+                    
+                </td><td class="minWidth150">
+                    
+                    標準学修課程外
+                    <div>
+                    </div>
+                    
+                    
+                </td>
+		</tr><tr>
+			<td align="center" width="70">
+                    学士課程
+                </td><td align="center" class="  tdQuarter2" width="40">
+                    
+                    2Q
+                </td><td width="120">
+                    火5-6 (S7-202)<br/>金5-6 (S7-202)
+                </td><td width="120">専門科目</td><td align="center" width="60">300</td><td align="left" width="100">
+                    MAT.C306
+                </td><td width="15%">
+                    <div class="hideAtPrint">
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl08_HyperLink1" href="http://www.ocw.titech.ac.jp/index.php?module=General&amp;action=T0300&amp;JWC=202202175&amp;lang=JA&amp;vid=03" target="_blank">誘電体材料科学 </a>
+                    </div>
+                    <div class="showAtPrintDiv">
+                        誘電体材料科学 
+                    </div>
+                    
+                </td><td width="12%">
+                    鶴見 敬章<br/>保科 拓也
+                </td><td align="center" width="40" nowrap="nowrap">
+                    2-0-0
+                </td><td align="center" width="40">
+                    ○
+                </td><td width="80">
+                    OK
+                </td><td width="120">
+                    
+                </td><td class="minWidth150">
+                    
+                    L(選択)
+                    <div>
+                    </div>
+                    
+                    
+                </td>
+		</tr><tr>
+			<td align="center" width="70">
+                    学士課程
+                </td><td align="center" class="  tdQuarter2" width="40">
+                    
+                    2Q
+                </td><td width="120">
+                    オンデマンド
+                </td><td width="120">専門科目</td><td align="center" width="60">200</td><td align="left" width="100">
+                    MCS.T213
+                </td><td width="15%">
+                    <div class="hideAtPrint">
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl09_HyperLink1" href="http://www.ocw.titech.ac.jp/index.php?module=General&amp;action=T0300&amp;JWC=202202382&amp;lang=JA&amp;vid=03" target="_blank">アルゴリズムとデータ構造 </a>
+                    </div>
+                    <div class="showAtPrintDiv">
+                        アルゴリズムとデータ構造 
+                    </div>
+                    
+                </td><td width="12%">
+                    森 立平
+                </td><td align="center" width="40" nowrap="nowrap">
+                    2-1-0
+                </td><td align="center" width="40">
+                    ○
+                </td><td width="80">
+                    OK
+                </td><td width="120">
+                    
+                </td><td class="minWidth150">
+                    
+                    標準学修課程外
+                    <div>
+                    </div>
+                    
+                    
+                </td>
+		</tr>
+	</table>
+</div>
+    
+    
+</div>
+
+    <div class="closeBtn">
+        <input type="submit" name="ctl00$ContentPlaceHolder1$btnClose" value="閉じる" onclick="window.close(); return false;" id="ctl00_ContentPlaceHolder1_btnClose" />
+    </div>
+    <div class="toTop hideAtPrint">
+        <a href="#top">
+            ページの先頭へ</a>
+    </div>
+
+    </div>
+    <div class="footer">
+        <div>
+        
+                    <span id="spanServerName" style="color: #005396">002</span>
+                    
+            </div>
+    </div>
+    </form>
+</body>
+</html>
