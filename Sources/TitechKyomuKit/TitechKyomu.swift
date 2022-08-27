@@ -12,6 +12,14 @@ struct TitechKyomu {
         self.httpClient = HTTPClientImpl(urlSession: urlSession, userAgent: userAgent)
     }
     
+    public func loginToTop() async throws -> Bool {
+        let html = try await httpClient.send(TopPageRequest())
+        let doc = try HTML(html: html, encoding: .utf8)
+        let title = doc.css("title").first?.content ?? ""
+        print(title)
+        return (title.contains("学生トップ") || title.contains("Top"))
+    }
+    
     public func fetchKyomuCourseData() async throws -> [KyomuCourse] {
         let html = try await httpClient.send(ReportCheckPageRequest())
         return try await parseReportCheckPage(html: html)

@@ -21,4 +21,21 @@ final class TitechKyomuKitTests: XCTestCase {
         XCTAssertFalse(resultEn.contains(KyomuCourse(name: "Solid State Physics (Lattice)", periods: [KyomuCoursePeriod(day: .monday, start: 3, end: 4, location: "S8-102"), KyomuCoursePeriod(day: .thursday, start: 3, end: 4, location: "S8-102")], quarters: [1], code: "MAT.P301")))
         XCTAssertEqual(resultEn[6], KyomuCourse(name: "Introduction to Algorithms and Data Structures", periods: [], quarters: [2], code: "MCS.T213"))
     }
+    
+    func testLogin() async throws {
+        let titechkyomu = TitechKyomu(urlSession: .shared)
+        let cookies: [HTTPCookie] = [
+            HTTPCookie(
+                properties: [
+                    .name: "AUTH_SESSION_ID",
+                    .domain: "https://titech.ac.jp",
+                    .path: "/",
+                    .value: ""
+                ]
+            )!
+        ]
+        URLSession.shared.configuration.httpCookieStorage?.setCookies(cookies, for: URL(string: "https://\(BaseURL.origin)")!, mainDocumentURL: nil)
+        let result = try await titechkyomu.loginToTop()
+        XCTAssertTrue(result)
+    }
 }
