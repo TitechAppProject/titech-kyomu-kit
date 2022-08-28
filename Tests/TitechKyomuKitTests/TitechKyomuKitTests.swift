@@ -24,18 +24,17 @@ final class TitechKyomuKitTests: XCTestCase {
     
     func testLogin() async throws {
         let titechkyomu = TitechKyomu(urlSession: .shared)
-        let cookies: [HTTPCookie] = [
-            HTTPCookie(
-                properties: [
-                    .name: "AUTH_SESSION_ID",
-                    .domain: "https://titech.ac.jp",
-                    .path: "/",
-                    .value: ""
-                ]
-            )!
-        ]
-        URLSession.shared.configuration.httpCookieStorage?.setCookies(cookies, for: URL(string: "https://\(BaseURL.origin)")!, mainDocumentURL: nil)
-        let result = try await titechkyomu.loginToTop()
-        XCTAssertTrue(result)
+        let authSessionId = ""
+        let cookie = HTTPCookie(
+            properties: [
+                .name: "AUTH_SESSION_ID",
+                .domain: ".titech.ac.jp",
+                .path: "/",
+                .value: authSessionId
+            ]
+        )!
+        HTTPCookieStorage.shared.setCookie(cookie)
+        let resultLogin = try await titechkyomu.loginToTop()
+        print(resultLogin)
     }
 }

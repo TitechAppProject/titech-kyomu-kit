@@ -16,7 +16,6 @@ struct TitechKyomu {
         let html = try await httpClient.send(TopPageRequest())
         let doc = try HTML(html: html, encoding: .utf8)
         let title = doc.css("title").first?.content ?? ""
-        print(title)
         return (title.contains("学生トップ") || title.contains("Top"))
     }
     
