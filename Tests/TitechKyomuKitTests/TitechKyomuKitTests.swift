@@ -36,5 +36,7 @@ final class TitechKyomuKitTests: XCTestCase {
         HTTPCookieStorage.shared.setCookie(cookie)
         let resultLogin = try await titechkyomu.loginToTop()
         print(resultLogin)
+        let resultFetch = try await titechkyomu.fetchKyomuCourseData()
+        print(resultFetch)
     }
 }
