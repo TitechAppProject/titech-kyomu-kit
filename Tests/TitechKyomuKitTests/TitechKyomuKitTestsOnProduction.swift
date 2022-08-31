@@ -2,16 +2,17 @@ import XCTest
 @testable import TitechKyomuKit
 
 final class TitechKyomuKitTestsOnProduction: XCTestCase {
-    let cookie = HTTPCookie(
-        properties: [
-            .name: "AUTH_SESSION_ID",
-            .domain: ".titech.ac.jp",
-            .path: "/",
-            .value: ""  // use actual AUTH_SESSION_ID value
-        ]
-    )!
     // To try on production environment, uncomment the following:
     
+//    let cookie = HTTPCookie(
+//        properties: [
+//            .name: "AUTH_SESSION_ID",
+//            .domain: ".titech.ac.jp",
+//            .path: "/",
+//            .value: ""  // use actual AUTH_SESSION_ID value
+//        ]
+//    )!
+//
 //    func testLoginOnProduction() async throws {
 //        let titechkyomu = TitechKyomu(urlSession: .shared)
 //        HTTPCookieStorage.shared.setCookie(cookie)
