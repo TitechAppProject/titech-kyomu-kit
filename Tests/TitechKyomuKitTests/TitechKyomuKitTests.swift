@@ -2,14 +2,22 @@ import XCTest
 @testable import TitechKyomuKit
 
 final class TitechKyomuKitTests: XCTestCase {
-    func testParseTopPage() async throws {
+    func testParseTopPageJa() async throws {
         let titechkyomu = TitechKyomu(urlSession: .shared)
         let htmlJa = try! String(contentsOf: Bundle.module.url(forResource: "TopJapanese", withExtension: "html")!)
         let resultJa = try await titechkyomu.parseTopPage(html: htmlJa)
         XCTAssertTrue(resultJa)
+    }
+    
+    func testParseTopPageEn() async throws {
+        let titechkyomu = TitechKyomu(urlSession: .shared)
         let htmlEn = try! String(contentsOf: Bundle.module.url(forResource: "TopEnglish", withExtension: "html")!)
         let resultEn = try await titechkyomu.parseTopPage(html: htmlEn)
         XCTAssertTrue(resultEn)
+    }
+    
+    func testParseTopPageMaintenance() async throws {
+        let titechkyomu = TitechKyomu(urlSession: .shared)
         let htmlMaintenance = try! String(contentsOf: Bundle.module.url(forResource: "TopMaintenance", withExtension: "html")!)
         let resultMaintenance = try await titechkyomu.parseTopPage(html: htmlMaintenance)
         XCTAssertFalse(resultMaintenance)
