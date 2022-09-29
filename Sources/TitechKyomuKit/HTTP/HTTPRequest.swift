@@ -5,8 +5,8 @@ import FoundationNetworking
 
 enum BaseURL {
     #if TEST
-    static var origin = "https://kyomu-mock.titech.app"
-    static var host = "kyomu-mock.titech.app"
+    static var origin = "https://titech-kyomu-mock.s3.ap-northeast-1.amazonaws.com"
+    static var host = "titech-kyomu-mock.s3.ap-northeast-1.amazonaws.com"
 
     static func changeToMockServer() {}
     #else
@@ -14,8 +14,8 @@ enum BaseURL {
     static var host = "kyomu2.gakumu.titech.ac.jp"
 
     static func changeToMockServer() {
-        origin = "https://kyomu-mock.titech.app"
-        host = "kyomu-mock.titech.app"
+        origin = "https://titech-kyomu-mock.s3.ap-northeast-1.amazonaws.com"
+        host = "titech-kyomu-mock.s3.ap-northeast-1.amazonaws.com"
     }
     #endif
 }

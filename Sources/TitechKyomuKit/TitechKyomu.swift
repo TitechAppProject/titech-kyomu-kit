@@ -55,4 +55,8 @@ public struct TitechKyomu {
             return KyomuCourse(name: tds[6], periods: periods, quarters: KyomuCourse.convert2Quarters(tds[1]), code: tds[5])
         }
     }
+
+    public static func changeToMockServer() {
+        BaseURL.changeToMockServer()
+    }
 }
