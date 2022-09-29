@@ -14,6 +14,7 @@ final class TitechKyomuKitTestsOnProduction: XCTestCase {
 //    )!
 //
 //    func testLoginOnProduction() async throws {
+//        TitechKyomu.changeToMockServer()
 //        let titechkyomu = TitechKyomu(urlSession: .shared)
 //        HTTPCookieStorage.shared.setCookie(cookie)
 //        let resultLogin = try await titechkyomu.fetchTopPage()
@@ -21,6 +22,7 @@ final class TitechKyomuKitTestsOnProduction: XCTestCase {
 //    }
 //
 //    func testParseReportCheckPageJaOnProduction() async throws {
+//        TitechKyomu.changeToMockServer()
 //        let titechkyomu = TitechKyomu(urlSession: .shared)
 //        HTTPCookieStorage.shared.setCookie(cookie)
 //        let resultLogin = try await titechkyomu.fetchTopPage()
@@ -42,13 +44,20 @@ final class TitechKyomuKitTestsOnProduction: XCTestCase {
 //            }
 //        }
 //        let resultJa = try await titechkyomu.fetchKyomuCourseData()
-//        XCTAssertEqual(resultJa[0], KyomuCourse(name: "分光学", periods: [KyomuCoursePeriod(day: .monday, start: 1, end: 2, location: "S7-202"), KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202")], quarters: [1], code: "MAT.C302"))
-//        XCTAssertTrue(resultJa.contains(KyomuCourse(name: "固体物理学(格子系)", periods: [KyomuCoursePeriod(day: .monday, start: 3, end: 4, location: "S8-102"), KyomuCoursePeriod(day: .thursday, start: 3, end: 4, location: "S8-102")], quarters: [1], code: "MAT.P301")))
-//        XCTAssertFalse(resultJa.contains(KyomuCourse(name: "架空の科目", periods: [KyomuCoursePeriod(day: .monday, start: 3, end: 4, location: "S8-102"), KyomuCoursePeriod(day: .thursday, start: 3, end: 4, location: "S8-102")], quarters: [1], code: "MAT.P301")))
-//        XCTAssertEqual(resultJa[7], KyomuCourse(name: "アルゴリズムとデータ構造", periods: [], quarters: [2], code: "MCS.T213"))
+//        XCTAssertEqual(
+//            resultJa[0],
+//            KyomuCourse(
+//                name: "分光学",
+//                periods: [KyomuCoursePeriod(day: .monday, start: 1, end: 2, location: "S7-202"),
+//                          KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202")],
+//                quarters: [1],
+//                code: "MAT.C302"
+//            )
+//        )
 //    }
 //
 //    func testParseReportCheckPageEnOnProduction() async throws {
+//        TitechKyomu.changeToMockServer()
 //        let titechkyomu = TitechKyomu(urlSession: .shared)
 //        HTTPCookieStorage.shared.setCookie(cookie)
 //        let resultLogin = try await titechkyomu.fetchTopPage()
