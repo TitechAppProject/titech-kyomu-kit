@@ -5,6 +5,7 @@ public struct KyomuCourse: Equatable, Codable {
     public let periods: [KyomuCoursePeriod]
     public let quarters: [Int]
     public let code: String
+    public let ocwId: String
     
     static func convert2Quarters(_ str: String) -> [Int] {
         let str = str.replacingOccurrences(of: "Q", with: "")
