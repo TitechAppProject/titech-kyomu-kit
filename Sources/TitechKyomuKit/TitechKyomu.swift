@@ -31,18 +31,16 @@ public struct TitechKyomu {
     func parseReportCheckPage(html: String) async throws -> [KyomuCourse] {
         let doc = try HTML(html: html, encoding: .utf8)
         
-        return doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_grid tr:not(:first-of-type)").compactMap { row in
-            let tds = row.css("td").map { td -> String in
-                if let courseNameElement = td.css(".showAtPrintDiv").first  {
-                    return courseNameElement.content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-                } else {
-                    return td.content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-                }
-            }
-            if tds[10] != "OK" {
+        return doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_grid tr:not(:first-of-type)").compactMap { row -> KyomuCourse? in
+            let tds = row.css("td")
+            guard (tds[10].content ?? "").trimmingCharacters(in: .whitespacesAndNewlines) == "OK" else {
                 return nil
             }
-            let periodRegexpResult = tds[2].matches(#"([日月火水木金土]|Sun|Mon|Tue|Wed|Thu|Fri|Sat)(\d)-(\d)\s?(?:[(（]([^()（）]+)[)）])?"#) ?? []
+
+            let periodTd = tds[2]
+            let periodCountent = periodTd.content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            let periodRegexpResult = periodCountent
+                .matches(#"([日月火水木金土]|Sun|Mon|Tue|Wed|Thu|Fri|Sat)(\d)-(\d)\s?(?:[(（]([^()（）]+)[)）])?"#) ?? []
             let periods = periodRegexpResult.map { result -> KyomuCoursePeriod in
                 KyomuCoursePeriod(
                     day: DayOfWeek.convert(result[0]),
@@ -51,8 +49,16 @@ public struct TitechKyomu {
                     location: result[3]
                 )
             }
-            
-            return KyomuCourse(name: tds[6], periods: periods, quarters: KyomuCourse.convert2Quarters(tds[1]), code: tds[5])
+
+            let ocwId = tds[6].css("a").first?["href"]?.matches("JWC=([0-9]+)")?.first?.first
+
+            return KyomuCourse(
+                name: tds[6].css(".showAtPrintDiv").first?.content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
+                periods: periods,
+                quarters: KyomuCourse.convert2Quarters(tds[1].content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""),
+                code: tds[5].content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
+                ocwId: ocwId ?? ""
+            )
         }
     }
 
