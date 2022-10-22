@@ -4,6 +4,10 @@ import FoundationNetworking
 #endif
 import Kanna
 
+public enum TitechKyomuError: Error {
+    case failedLogin
+}
+
 public struct TitechKyomu {
     private let httpClient: HTTPClient
     public static let defaultUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
@@ -12,9 +16,11 @@ public struct TitechKyomu {
         self.httpClient = HTTPClientImpl(urlSession: urlSession, userAgent: userAgent)
     }
     
-    public func fetchTopPage() async throws -> Bool {
+    public func loginTopPage() async throws {
         let html = try await httpClient.send(TopPageRequest())
-        return try await parseTopPage(html: html)
+        if !(try await parseTopPage(html: html)) {
+            throw TitechKyomuError.failedLogin
+        }
     }
     
     public func fetchKyomuCourseData() async throws -> [KyomuCourse] {
