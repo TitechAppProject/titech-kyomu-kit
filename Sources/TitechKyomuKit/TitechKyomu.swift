@@ -27,6 +27,11 @@ public struct TitechKyomu {
         let html = try await httpClient.send(ReportCheckPageRequest())
         return try await parseReportCheckPage(html: html)
     }
+    
+    public func fetchForm8CourseData() async throws -> [KyomuCourse] {
+        let html = try await httpClient.send(CourseAdministrationFormPageRequest())
+        return try await parseForm8(html: html)
+    }
 
     func parseTopPage(html: String) async throws -> Bool {
         let doc = try HTML(html: html, encoding: .utf8)
@@ -44,8 +49,8 @@ public struct TitechKyomu {
             }
 
             let periodTd = tds[2]
-            let periodCountent = periodTd.content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-            let periodRegexpResult = periodCountent
+            let periodContent = periodTd.content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            let periodRegexpResult = periodContent
                 .matches(#"([日月火水木金土]|Sun|Mon|Tue|Wed|Thu|Fri|Sat)(\d)-(\d)\s?(?:[(（]([^()（）]+)[)）])?"#) ?? []
             let periods = periodRegexpResult.map { result -> KyomuCoursePeriod in
                 KyomuCoursePeriod(
@@ -65,6 +70,40 @@ public struct TitechKyomu {
                 code: tds[5].content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
                 ocwId: ocwId ?? ""
             )
+        }
+    }
+    
+    func parseForm8(html: String) async throws -> [KyomuCourse] {
+        let doc = try HTML(html: html, encoding: .utf8)
+        
+        return doc.css("#ctl00_ContentPlaceHolder1_grd8 tr:not(:first-of-type)").compactMap { row -> KyomuCourse? in
+            let tds = row.css("td")
+            let status = tds[1].content ?? ""
+            guard status.contains("承認済み") || status.contains("Approved") else {
+                return nil
+            }
+            
+            let name = tds[4].content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            
+            let periodTd = tds[2]
+            let periodContent = periodTd.content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            let periodRegexpResult = periodContent
+                .matches(#"([日月火水木金土]|Sun|Mon|Tue|Wed|Thu|Fri|Sat)(\d)-(\d)\s?(?:[(（]([^()（）]+)[)）])?"#) ?? []
+            let periods = periodRegexpResult.map { result -> KyomuCoursePeriod in
+                KyomuCoursePeriod(
+                    day: DayOfWeek.convert(result[0]),
+                    start: Int(result[1]) ?? -1,
+                    end: Int(result[2]) ?? -1,
+                    location: result[3]
+                )
+            }
+            
+            let quartersRegexResult = periodContent.matches("(^[^:：]+)[:：]") ?? []
+            let quarters = Array(Set(quartersRegexResult.flatMap{ KyomuCourse.convert2Quarters($0[0]) })).sorted()
+            let code = tds[3].content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            let ocwId = tds[4].css("a").first?["href"]?.matches("JWC=([0-9]+)")?.first?.first ?? ""
+            
+            return KyomuCourse(name: name, periods: periods, quarters: quarters, code: code, ocwId: ocwId)
         }
     }
 

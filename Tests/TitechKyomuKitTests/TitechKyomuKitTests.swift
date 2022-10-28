@@ -82,4 +82,44 @@ final class TitechKyomuKitTests: XCTestCase {
             )
         )
     }
+    
+    func testParseForm8Ja() async throws {
+        let titechkyomu = TitechKyomu(urlSession: .shared)
+        let htmlJa = try! String(contentsOf: Bundle.module.url(forResource: "CourseAdministrationFormsJapanese", withExtension: "html")!)
+        
+        let resultJa = try await titechkyomu.parseForm8(html: htmlJa)
+        XCTAssertEqual(
+            resultJa[0],
+            KyomuCourse(
+                name: "確率微分方程式",
+                periods: [
+                    KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "W931"),
+                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "W931")
+                ],
+                quarters: [4],
+                code: "MCS.T419",
+                ocwId: "202217437"
+            )
+        )
+    }
+    
+    func testParseForm8En() async throws {
+        let titechkyomu = TitechKyomu(urlSession: .shared)
+        let htmlEn = try! String(contentsOf: Bundle.module.url(forResource: "CourseAdministrationFormsEnglish", withExtension: "html")!)
+        
+        let resultEn = try await titechkyomu.parseForm8(html: htmlEn)
+        XCTAssertEqual(
+            resultEn[0],
+            KyomuCourse(
+                name: "Stochastic differential equations",
+                periods: [
+                    KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "W931"),
+                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "W931")
+                ],
+                quarters: [4],
+                code: "MCS.T419",
+                ocwId: "202217437"
+            )
+        )
+    }
 }
