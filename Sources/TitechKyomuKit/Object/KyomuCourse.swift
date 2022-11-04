@@ -6,6 +6,7 @@ public struct KyomuCourse: Equatable, Codable {
     public let quarters: [Int]
     public let code: String
     public let ocwId: String
+    public let isForm8: Bool
     
     static func convert2Quarters(_ str: String) -> [Int] {
         let str = str.replacingOccurrences(of: "Q", with: "")

@@ -36,7 +36,8 @@ final class TitechKyomuKitTests: XCTestCase {
                           KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202")],
                 quarters: [1],
                 code: "MAT.C302",
-                ocwId: "202202171"
+                ocwId: "202202171",
+                isForm8: false
             )
         )
         XCTAssertFalse(resultJa.contains { $0.name == "固体物理学(格子系)" })
@@ -47,7 +48,22 @@ final class TitechKyomuKitTests: XCTestCase {
                 periods: [],
                 quarters: [2],
                 code: "MCS.T213",
-                ocwId: "202202382"
+                ocwId: "202202382",
+                isForm8: false
+            )
+        )
+        XCTAssertEqual(
+            resultJa[7],
+            KyomuCourse(
+                name: "確率微分方程式",
+                periods: [
+                    KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "W931"),
+                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "W931")
+                ],
+                quarters: [4],
+                code: "MCS.T419",
+                ocwId: "202217437",
+                isForm8: true
             )
         )
     }
@@ -67,7 +83,8 @@ final class TitechKyomuKitTests: XCTestCase {
                 ],
                 quarters: [1],
                 code: "MAT.C302",
-                ocwId: "202202171"
+                ocwId: "202202171",
+                isForm8: false
             )
         )
         XCTAssertFalse(resultEn.contains { $0.name == "Solid State Physics (Lattice)" })
@@ -78,38 +95,12 @@ final class TitechKyomuKitTests: XCTestCase {
                 periods: [],
                 quarters: [2],
                 code: "MCS.T213",
-                ocwId: "202202382"
+                ocwId: "202202382",
+                isForm8: false
             )
         )
-    }
-    
-    func testParseForm8Ja() async throws {
-        let titechkyomu = TitechKyomu(urlSession: .shared)
-        let htmlJa = try! String(contentsOf: Bundle.module.url(forResource: "CourseAdministrationFormsJapanese", withExtension: "html")!)
-        
-        let resultJa = try await titechkyomu.parseForm8(html: htmlJa)
         XCTAssertEqual(
-            resultJa[0],
-            KyomuCourse(
-                name: "確率微分方程式",
-                periods: [
-                    KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "W931"),
-                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "W931")
-                ],
-                quarters: [4],
-                code: "MCS.T419",
-                ocwId: "202217437"
-            )
-        )
-    }
-    
-    func testParseForm8En() async throws {
-        let titechkyomu = TitechKyomu(urlSession: .shared)
-        let htmlEn = try! String(contentsOf: Bundle.module.url(forResource: "CourseAdministrationFormsEnglish", withExtension: "html")!)
-        
-        let resultEn = try await titechkyomu.parseForm8(html: htmlEn)
-        XCTAssertEqual(
-            resultEn[0],
+            resultEn[7],
             KyomuCourse(
                 name: "Stochastic differential equations",
                 periods: [
@@ -118,7 +109,8 @@ final class TitechKyomuKitTests: XCTestCase {
                 ],
                 quarters: [4],
                 code: "MCS.T419",
-                ocwId: "202217437"
+                ocwId: "202217437",
+                isForm8: true
             )
         )
     }
