@@ -3,6 +3,7 @@ import Foundation
 public struct KyomuCourse: Equatable, Codable {
     public let name: String
     public let periods: [KyomuCoursePeriod]
+    public let year: Int
     public let quarters: [Int]
     public let code: String
     public let ocwId: String

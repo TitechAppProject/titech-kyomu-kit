@@ -36,6 +36,11 @@ public struct TitechKyomu {
 
     func parseReportCheckPage(html: String) async throws -> [KyomuCourse] {
         let doc = try HTML(html: html, encoding: .utf8)
+        let title = doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl13_lblTerm")
+            .first?
+            .content?
+            .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let year = Int(title.matches(#"^(\d+)"#)?.first?.first ?? "") ?? 0
         
         return doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_grid tr:not(:first-of-type)").compactMap { row -> KyomuCourse? in
             let tds = row.css("td")
@@ -61,6 +66,7 @@ public struct TitechKyomu {
             return KyomuCourse(
                 name: tds[6].css(".showAtPrintDiv").first?.content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
                 periods: periods,
+                year: year,
                 quarters: KyomuCourse.convert2Quarters(tds[1].content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""),
                 code: tds[5].content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
                 ocwId: ocwId ?? "",

@@ -34,6 +34,7 @@ final class TitechKyomuKitTests: XCTestCase {
                 name: "分光学",
                 periods: [KyomuCoursePeriod(day: .monday, start: 1, end: 2, location: "S7-202"),
                           KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202")],
+                year: 2022,
                 quarters: [1],
                 code: "MAT.C302",
                 ocwId: "202202171",
@@ -46,6 +47,7 @@ final class TitechKyomuKitTests: XCTestCase {
             KyomuCourse(
                 name: "アルゴリズムとデータ構造",
                 periods: [],
+                year: 2022,
                 quarters: [2],
                 code: "MCS.T213",
                 ocwId: "202202382",
@@ -60,6 +62,7 @@ final class TitechKyomuKitTests: XCTestCase {
                     KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "W931"),
                     KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "W931")
                 ],
+                year: 2022,
                 quarters: [4],
                 code: "MCS.T419",
                 ocwId: "202217437",
@@ -81,6 +84,7 @@ final class TitechKyomuKitTests: XCTestCase {
                     KyomuCoursePeriod(day: .monday, start: 1, end: 2, location: "S7-202"),
                     KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202")
                 ],
+                year: 2022,
                 quarters: [1],
                 code: "MAT.C302",
                 ocwId: "202202171",
@@ -93,6 +97,7 @@ final class TitechKyomuKitTests: XCTestCase {
             KyomuCourse(
                 name: "Introduction to Algorithms and Data Structures",
                 periods: [],
+                year: 2022,
                 quarters: [2],
                 code: "MCS.T213",
                 ocwId: "202202382",
@@ -107,6 +112,7 @@ final class TitechKyomuKitTests: XCTestCase {
                     KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "W931"),
                     KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "W931")
                 ],
+                year: 2022,
                 quarters: [4],
                 code: "MCS.T419",
                 ocwId: "202217437",
