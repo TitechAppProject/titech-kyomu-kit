@@ -69,6 +69,21 @@ final class TitechKyomuKitTests: XCTestCase {
                 isForm8: true
             )
         )
+        XCTAssertEqual(
+            resultJa[8],
+            KyomuCourse(
+                name: "システム構築演習",
+                periods: [
+                    KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "情報工学系計算機室"),
+                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "情報工学系計算機室")
+                ],
+                year: 2022,
+                quarters: [4],
+                code: "CSC.T375",
+                ocwId: "202202449",
+                isForm8: false
+            )
+        )
     }
     
     func testParseReportCheckPageEn() async throws {
@@ -119,5 +134,21 @@ final class TitechKyomuKitTests: XCTestCase {
                 isForm8: true
             )
         )
+        XCTAssertEqual(
+            resultEn[8],
+            KyomuCourse(
+                name: "Workshop on System Implementation",
+                periods: [
+                    KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "情報工学系計算機室"),
+                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "情報工学系計算機室")
+                ],
+                year: 2022,
+                quarters: [4],
+                code: "CSC.T375",
+                ocwId: "202202449",
+                isForm8: false
+            )
+        )
+
     }
 }
