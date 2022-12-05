@@ -44,7 +44,8 @@ public struct TitechKyomu {
         
         return doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_grid tr:not(:first-of-type)").compactMap { row -> KyomuCourse? in
             let tds = row.css("td")
-            guard (tds[10].content ?? "").trimmingCharacters(in: .whitespacesAndNewlines) == "OK" else {
+            let resultContent = tds[9].content ?? ""
+            guard resultContent.contains("OK") || resultContent.contains("○") else {
                 return nil
             }
 
