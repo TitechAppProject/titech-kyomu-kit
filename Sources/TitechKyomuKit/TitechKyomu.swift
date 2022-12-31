@@ -40,7 +40,8 @@ public struct TitechKyomu {
             .first?
             .content?
             .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        let year = Int(title.matches(#"^(\d+)"#)?.first?.first ?? "") ?? 0
+        
+        let year = Int(title.firstMatch(of: #/^(\d{4})/#)?.0 ?? "") ?? 0
         
         return doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_grid tr:not(:first-of-type)").compactMap { row -> KyomuCourse? in
             let tds = row.css("td")
@@ -50,18 +51,17 @@ public struct TitechKyomu {
 
             let periodTd = tds[2]
             let periodContent = periodTd.content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-            let periodRegexpResult = periodContent
-                .matches(#"([日月火水木金土]|Sun|Mon|Tue|Wed|Thu|Fri|Sat)(\d)-(\d)\s?(?:[(（]([^()（）]+)[)）])?"#) ?? []
-            let periods = periodRegexpResult.map { result -> KyomuCoursePeriod in
+            let periodsRegex = #/(?<day>[日月火水木金土]|Sun|Mon|Tue|Wed|Thu|Fri|Sat)(?<start>\d)-(?<end>\d)\s?(?:[(（](?<location>[^()（）]+)[)）])?/#
+            let periods = periodContent.matches(of: periodsRegex).compactMap { result in
                 KyomuCoursePeriod(
-                    day: DayOfWeek.convert(result[0]),
-                    start: Int(result[1]) ?? -1,
-                    end: Int(result[2]) ?? -1,
-                    location: result[3]
+                    day: DayOfWeek.convert(String(result.day)),
+                    start: Int(result.start) ?? -1,
+                    end: Int(result.end) ?? -1,
+                    location: String(result.location ?? "")
                 )
             }
 
-            let ocwId = tds[6].css("a").first?["href"]?.matches("JWC=([0-9]+)")?.first?.first
+            let ocwId = String(tds[6].css("a").first?["href"]?.matches(of: #/JWC=(?<id>[0-9]+)/#).first?.id ?? "")
 
             return KyomuCourse(
                 name: tds[6].css(".showAtPrintDiv").first?.content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
@@ -69,7 +69,7 @@ public struct TitechKyomu {
                 year: year,
                 quarters: KyomuCourse.convert2Quarters(tds[1].content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""),
                 code: tds[5].content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
-                ocwId: ocwId ?? "",
+                ocwId: ocwId,
                 isForm8: tds[12].content?.contains("Form No.8") ?? false || tds[12].content?.contains("様式第８号") ?? false
             )
         }
