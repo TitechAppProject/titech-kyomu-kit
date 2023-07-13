@@ -11,6 +11,7 @@ public struct KyomuCourse: Equatable, Codable {
     
     static func convert2Quarters(_ str: String) -> [Int] {
         let str = str.replacingOccurrences(of: "Q", with: "")
+            // "〜(U+301C)" や "~" は昔のHTMLにあった気がするが、今は "～" しかなさそう?
             .replacingOccurrences(of: "[～〜~]", with: "-", options: .regularExpression)
         
         if str.contains("-") {
