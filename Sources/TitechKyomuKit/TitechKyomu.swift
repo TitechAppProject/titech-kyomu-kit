@@ -18,23 +18,23 @@ public struct TitechKyomu {
     
     public func loginTopPage() async throws {
         let html = try await httpClient.send(TopPageRequest())
-        if !(try await parseTopPage(html: html)) {
+        if !(try parseTopPage(html: html)) {
             throw TitechKyomuError.failedLogin
         }
     }
     
     public func fetchKyomuCourseData() async throws -> [KyomuCourse] {
         let html = try await httpClient.send(ReportCheckPageRequest())
-        return try await parseReportCheckPage(html: html)
+        return try parseReportCheckPage(html: html)
     }
 
-    func parseTopPage(html: String) async throws -> Bool {
+    func parseTopPage(html: String) throws -> Bool {
         let doc = try HTML(html: html, encoding: .utf8)
         let title = doc.css("title").first?.content ?? ""
         return (title.contains("学生トップ") || title.contains("Top"))
     }
 
-    func parseReportCheckPage(html: String) async throws -> [KyomuCourse] {
+    func parseReportCheckPage(html: String) throws -> [KyomuCourse] {
         let doc = try HTML(html: html, encoding: .utf8)
         let title = doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl13_lblTerm")
             .first?
