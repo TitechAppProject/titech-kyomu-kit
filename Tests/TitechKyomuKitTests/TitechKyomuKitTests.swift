@@ -2,32 +2,32 @@ import XCTest
 @testable import TitechKyomuKit
 
 final class TitechKyomuKitTests: XCTestCase {
-    func testParseTopPageJa() async throws {
+    func testParseTopPageJa() throws {
         let titechkyomu = TitechKyomu(urlSession: .shared)
         let htmlJa = try! String(contentsOf: Bundle.module.url(forResource: "TopJapanese", withExtension: "html")!)
-        let resultJa = try await titechkyomu.parseTopPage(html: htmlJa)
+        let resultJa = try titechkyomu.parseTopPage(html: htmlJa)
         XCTAssertTrue(resultJa)
     }
     
-    func testParseTopPageEn() async throws {
+    func testParseTopPageEn() throws {
         let titechkyomu = TitechKyomu(urlSession: .shared)
         let htmlEn = try! String(contentsOf: Bundle.module.url(forResource: "TopEnglish", withExtension: "html")!)
-        let resultEn = try await titechkyomu.parseTopPage(html: htmlEn)
+        let resultEn = try titechkyomu.parseTopPage(html: htmlEn)
         XCTAssertTrue(resultEn)
     }
     
-    func testParseTopPageMaintenance() async throws {
+    func testParseTopPageMaintenance() throws {
         let titechkyomu = TitechKyomu(urlSession: .shared)
         let htmlMaintenance = try! String(contentsOf: Bundle.module.url(forResource: "TopMaintenance", withExtension: "html")!)
-        let resultMaintenance = try await titechkyomu.parseTopPage(html: htmlMaintenance)
+        let resultMaintenance = try titechkyomu.parseTopPage(html: htmlMaintenance)
         XCTAssertFalse(resultMaintenance)
     }
     
-    func testParseReportCheckPageJa() async throws {
+    func testParseReportCheckPageJa() throws {
         let titechkyomu = TitechKyomu(urlSession: .shared)
         let htmlJa = try! String(contentsOf: Bundle.module.url(forResource: "ReportCheckResultJapanese", withExtension: "html")!)
         
-        let resultJa = try await titechkyomu.parseReportCheckPage(html: htmlJa)
+        let resultJa = try titechkyomu.parseReportCheckPage(html: htmlJa)
         XCTAssertEqual(
             resultJa[0],
             KyomuCourse(
@@ -86,11 +86,11 @@ final class TitechKyomuKitTests: XCTestCase {
         )
     }
     
-    func testParseReportCheckPageEn() async throws {
+    func testParseReportCheckPageEn() throws {
         let titechkyomu = TitechKyomu(urlSession: .shared)
         let htmlEn = try! String(contentsOf: Bundle.module.url(forResource: "ReportCheckResultEnglish", withExtension: "html")!)
         
-        let resultEn = try await titechkyomu.parseReportCheckPage(html: htmlEn)
+        let resultEn = try titechkyomu.parseReportCheckPage(html: htmlEn)
         XCTAssertEqual(
             resultEn[0],
             KyomuCourse(
