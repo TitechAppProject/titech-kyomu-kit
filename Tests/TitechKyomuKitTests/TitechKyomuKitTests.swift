@@ -84,6 +84,18 @@ final class TitechKyomuKitTests: XCTestCase {
                 isForm8: false
             )
         )
+        XCTAssertEqual(
+            resultJa[9],
+            KyomuCourse(
+                name: "数理・計算科学講究S2",
+                periods: [],
+                year: 2022,
+                quarters: [1, 2],
+                code: "MCS.Z591",
+                ocwId: "202304050",
+                isForm8: false
+            )
+        )
     }
     
     func testParseReportCheckPageEn() async throws {
@@ -149,6 +161,17 @@ final class TitechKyomuKitTests: XCTestCase {
                 isForm8: false
             )
         )
-
+        XCTAssertEqual(
+            resultEn[9],
+            KyomuCourse(
+                name: "Seminar on Mathematical and Computing Science S2",
+                periods: [],
+                year: 2022,
+                quarters: [1, 2],
+                code: "MCS.Z591",
+                ocwId: "202304050",
+                isForm8: false
+            )
+        )
     }
 }
