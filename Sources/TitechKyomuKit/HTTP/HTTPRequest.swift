@@ -30,8 +30,6 @@ protocol HTTPRequest {
     var method: HTTPMethod { get }
 
     var headerFields: [String: String]? { get }
-
-    var body: [String: String]? { get }
 }
 
 extension HTTPRequest {

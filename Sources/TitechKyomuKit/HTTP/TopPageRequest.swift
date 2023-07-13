@@ -11,6 +11,4 @@ struct TopPageRequest: HTTPRequest {
         "Accept-Encoding": "br, gzip, deflate",
         "Accept-Language": "ja-jp"
     ]
-    
-    let body: [String : String]? = nil
 }
