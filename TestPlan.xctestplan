@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "EB1036C6-7DAF-4D3F-9AAE-75CA472C373D",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "TitechKyomuKitTests",
+        "name" : "TitechKyomuKitTests"
+      }
+    }
+  ],
+  "version" : 1
+}
