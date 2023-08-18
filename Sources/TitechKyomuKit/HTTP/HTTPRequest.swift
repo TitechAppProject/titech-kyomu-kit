@@ -10,8 +10,8 @@ enum BaseURL {
 
     static func changeToMockServer() {}
     #else
-    static var origin = "https://kyomu2.gakumu.titech.ac.jp"
-    static var host = "kyomu2.gakumu.titech.ac.jp"
+    static var origin = "https://kyomu0.gakumu.titech.ac.jp"
+    static var host = "kyomu0.gakumu.titech.ac.jp"
 
     static func changeToMockServer() {
         origin = "https://titech-kyomu-mock.s3.ap-northeast-1.amazonaws.com"
