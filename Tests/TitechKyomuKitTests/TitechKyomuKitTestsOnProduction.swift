@@ -34,7 +34,7 @@ final class TitechKyomuKitTestsOnProduction: XCTestCase {
 //                    let cookieJa = HTTPCookie(
 //                        properties: [
 //                            .name: "Language",
-//                            .domain: "kyomu2.gakumu.titech.ac.jp",
+//                            .domain: "kyomu0.gakumu.titech.ac.jp",
 //                            .path: "/",
 //                            .value: "ja-JP"
 //                        ]
@@ -69,7 +69,7 @@ final class TitechKyomuKitTestsOnProduction: XCTestCase {
 //                    let cookieEn = HTTPCookie(
 //                        properties: [
 //                            .name: "Language",
-//                            .domain: "kyomu2.gakumu.titech.ac.jp",
+//                            .domain: "kyomu0.gakumu.titech.ac.jp",
 //                            .path: "/",
 //                            .value: "en-US"
 //                        ]
