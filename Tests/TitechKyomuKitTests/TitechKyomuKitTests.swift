@@ -32,7 +32,7 @@ final class TitechKyomuKitTests: XCTestCase {
             resultJa[0],
             KyomuCourse(
                 name: "分光学",
-                periods: [KyomuCoursePeriod(day: .monday, start: 1, end: 2, location: "S7-202"),
+                periods: [KyomuCoursePeriod(day: .monday, start: 11, end: 12, location: "S7-202"),
                           KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202")],
                 year: 2022,
                 quarters: [1],
@@ -96,7 +96,7 @@ final class TitechKyomuKitTests: XCTestCase {
             KyomuCourse(
                 name: "Spectroscopy",
                 periods: [
-                    KyomuCoursePeriod(day: .monday, start: 1, end: 2, location: "S7-202"),
+                    KyomuCoursePeriod(day: .monday, start: 11, end: 12, location: "S7-202"),
                     KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202")
                 ],
                 year: 2022,
