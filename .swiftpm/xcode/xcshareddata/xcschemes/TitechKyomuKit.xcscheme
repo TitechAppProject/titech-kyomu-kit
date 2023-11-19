@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1430"
+   LastUpgradeVersion = "1500"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "TitechKyomuKit_TitechKyomuKitTests"
-               BuildableName = "TitechKyomuKit_TitechKyomuKitTests"
-               BlueprintName = "TitechKyomuKit_TitechKyomuKitTests"
-               ReferencedContainer = "container:">
-            </BuildableReference>
-         </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
@@ -54,13 +40,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <TestPlans>
-         <TestPlanReference
-            reference = "container:TestPlan.xctestplan"
-            default = "YES">
-         </TestPlanReference>
-      </TestPlans>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -94,9 +75,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "TitechKyomuKit_TitechKyomuKitTests"
-            BuildableName = "TitechKyomuKit_TitechKyomuKitTests"
-            BlueprintName = "TitechKyomuKit_TitechKyomuKitTests"
+            BlueprintIdentifier = "TitechKyomuKit"
+            BuildableName = "TitechKyomuKit"
+            BlueprintName = "TitechKyomuKit"
             ReferencedContainer = "container:">
          </BuildableReference>
       </MacroExpansion>
