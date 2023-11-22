@@ -51,7 +51,8 @@ public struct TitechKyomu {
             let periodTd = tds[2]
             let periodContent = periodTd.content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
             let periodRegexpResult = periodContent
-                .matches(#"([日月火水木金土]|Sun|Mon|Tue|Wed|Thu|Fri|Sat)(\d+)-(\d+)\s?(?:[(（]([^()（）]+)[)）])?"#) ?? []
+                .matches("([日月火水木金土]|Sun|Mon|Tue|Wed|Thu|Fri|Sat)(\\d+)-(\\d+)\\s?(?:\\(([^()（）]+(\\([^()（）]+\\)[^()（）]*)*)\\))?") ?? []
+            print(periodRegexpResult)
             let periods = periodRegexpResult.map { result -> KyomuCoursePeriod in
                 KyomuCoursePeriod(
                     day: DayOfWeek.convert(result[0]),
