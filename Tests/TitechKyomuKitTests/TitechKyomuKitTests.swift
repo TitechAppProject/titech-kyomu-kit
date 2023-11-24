@@ -43,6 +43,19 @@ final class TitechKyomuKitTests: XCTestCase {
         )
         XCTAssertFalse(resultJa.contains { $0.name == "固体物理学(格子系)" })
         XCTAssertEqual(
+            resultJa[1],
+            KyomuCourse(
+                name: "セラミックス実験第一",
+                periods: [KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "情報工学系計算機室，GSIC情報棟 3階307号室"),
+                          KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "情報工学系計算機室，GSIC情報棟 3階308号室")],
+                year: 2022,
+                quarters: [1],
+                code: "MAT.C350",
+                ocwId: "202202185",
+                isForm8: false
+            )
+        )
+        XCTAssertEqual(
             resultJa[6],
             KyomuCourse(
                 name: "アルゴリズムとデータ構造",
