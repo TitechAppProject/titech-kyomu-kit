@@ -1,5 +1,6 @@
 import Foundation
 import Kanna
+import RegexBuilder
 
 #if canImport(FoundationNetworking)
 import FoundationNetworking
@@ -42,7 +43,18 @@ public struct TitechKyomu {
             .first?
             .content?
             .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        let year = Int(title.matches(#"^(\d+)"#)?.first?.first ?? "") ?? 0
+        let yearReference = Reference<Int>()
+        let year =
+            title.firstMatch(
+                of: Regex {
+                    Anchor.startOfLine
+                    TryCapture(as: yearReference) {
+                        OneOrMore(.digit)
+                    } transform: {
+                        Int($0)
+                    }
+                }
+            )?[yearReference] ?? 0
 
         return doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_grid tr:not(:first-of-type)").compactMap { row -> KyomuCourse? in
             let tds = row.css("td")
@@ -51,20 +63,80 @@ public struct TitechKyomu {
             }
 
             let periodTd = tds[2]
-            let periodContent = periodTd.content?.trimmingCharacters(in: .whitespacesAndNewlines).filter({ !$0.isNewline }) ?? ""
-            let periodRegexpResult =
-                periodContent
-                .matches("([日月火水木金土]|Sun|Mon|Tue|Wed|Thu|Fri|Sat)(\\d+)-(\\d+)\\s?(?:\\(([^()]+(\\([^()]+\\)[^()]*)*)\\))?") ?? []
-            let periods = periodRegexpResult.map { result -> KyomuCoursePeriod in
+            let periodContent = periodTd.innerHTML?.trimmingCharacters(in: .whitespacesAndNewlines).filter({ !$0.isNewline }) ?? ""
+
+            let dayReference = Reference<DayOfWeek>()
+            let startReference = Reference<Int>()
+            let endReference = Reference<Int>()
+            let locationReference = Reference<String>()
+            let regex = Regex {
+                Capture(as: dayReference) {
+                    ChoiceOf {
+                        One(.anyOf("日月火水木金土"))
+                        "Sun"
+                        "Mon"
+                        "Tue"
+                        "Wed"
+                        "Thu"
+                        "Fri"
+                        "Sat"
+                    }
+                } transform: {
+                    DayOfWeek.convert(String($0))
+                }
+                TryCapture(as: startReference) {
+                    OneOrMore(.digit)
+                } transform: {
+                    Int($0)
+                }
+                "-"
+                TryCapture(as: endReference) {
+                    OneOrMore(.digit)
+                } transform: {
+                    Int($0)
+                }
+                Optionally(.whitespace)
+                Capture(as: locationReference) {
+                    ZeroOrMore {
+                        NegativeLookahead {
+                            "<br"
+                        }
+                        CharacterClass.any
+                    }
+                } transform: {
+                    if let first = $0.first,
+                        let last = $0.last,
+                        first == "(",
+                        last == ")"
+                    {
+                        String($0.dropFirst().dropLast())
+                    } else {
+                        String($0)
+                    }
+                }
+            }
+            let periods = periodContent.matches(of: regex).map { result in
                 KyomuCoursePeriod(
-                    day: DayOfWeek.convert(result[0]),
-                    start: Int(result[1]) ?? -1,
-                    end: Int(result[2]) ?? -1,
-                    location: result[3]
+                    day: result[dayReference],
+                    start: result[startReference],
+                    end: result[endReference],
+                    location: result[locationReference]
                 )
             }
 
-            let ocwId = tds[6].css("a").first?["href"]?.matches("JWC=([0-9]+)")?.first?.first
+            let ocwIdReference = Reference<String>()
+            let ocwId =
+                tds[6].css("a").first?["href"]?
+                .firstMatch(
+                    of: Regex {
+                        "JWC="
+                        TryCapture(as: ocwIdReference) {
+                            OneOrMore(.word)
+                        } transform: {
+                            String($0)
+                        }
+                    }
+                )?[ocwIdReference] ?? ""
 
             return KyomuCourse(
                 name: tds[6].css(".showAtPrintDiv").first?.content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
@@ -72,7 +144,7 @@ public struct TitechKyomu {
                 year: year,
                 quarters: KyomuCourse.convert2Quarters(tds[1].content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""),
                 code: tds[5].content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
-                ocwId: ocwId ?? "",
+                ocwId: ocwId,
                 isForm8: tds[12].content?.contains("Form No.8") ?? false || tds[12].content?.contains("様式第８号") ?? false
             )
         }

@@ -60,6 +60,22 @@ final class TitechKyomuKitTests: XCTestCase {
                 isForm8: false
             )
         )
+
+        XCTAssertEqual(
+            resultJa[2],
+            KyomuCourse(
+                name: "結晶化学（C）",
+                periods: [
+                    KyomuCoursePeriod(day: .monday, start: 7, end: 10, location: "西2号館教養科目物理学実験室（Introductory Physics Laboratory）"),
+                    KyomuCoursePeriod(day: .friday, start: 5, end: 6, location: "S7-202"),
+                ],
+                year: 2022,
+                quarters: [1],
+                code: "MAT.C301",
+                ocwId: "202202170",
+                isForm8: false
+            )
+        )
         XCTAssertEqual(
             resultJa[6],
             KyomuCourse(
