@@ -1,4 +1,5 @@
 import XCTest
+
 @testable import TitechKyomuKit
 
 final class TitechKyomuKitTests: XCTestCase {
@@ -8,32 +9,34 @@ final class TitechKyomuKitTests: XCTestCase {
         let resultJa = try titechkyomu.parseTopPage(html: htmlJa)
         XCTAssertTrue(resultJa)
     }
-    
+
     func testParseTopPageEn() throws {
         let titechkyomu = TitechKyomu(urlSession: .shared)
         let htmlEn = try! String(contentsOf: Bundle.module.url(forResource: "TopEnglish", withExtension: "html")!)
         let resultEn = try titechkyomu.parseTopPage(html: htmlEn)
         XCTAssertTrue(resultEn)
     }
-    
+
     func testParseTopPageMaintenance() throws {
         let titechkyomu = TitechKyomu(urlSession: .shared)
         let htmlMaintenance = try! String(contentsOf: Bundle.module.url(forResource: "TopMaintenance", withExtension: "html")!)
         let resultMaintenance = try titechkyomu.parseTopPage(html: htmlMaintenance)
         XCTAssertFalse(resultMaintenance)
     }
-    
+
     func testParseReportCheckPageJa() throws {
         let titechkyomu = TitechKyomu(urlSession: .shared)
         let htmlJa = try! String(contentsOf: Bundle.module.url(forResource: "ReportCheckResultJapanese", withExtension: "html")!)
-        
+
         let resultJa = try titechkyomu.parseReportCheckPage(html: htmlJa)
         XCTAssertEqual(
             resultJa[0],
             KyomuCourse(
                 name: "分光学",
-                periods: [KyomuCoursePeriod(day: .monday, start: 11, end: 12, location: "S7-202(S000)"),
-                          KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202")],
+                periods: [
+                    KyomuCoursePeriod(day: .monday, start: 11, end: 12, location: "S7-202(S000)"),
+                    KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202"),
+                ],
                 year: 2022,
                 quarters: [1],
                 code: "MAT.C302",
@@ -46,8 +49,10 @@ final class TitechKyomuKitTests: XCTestCase {
             resultJa[1],
             KyomuCourse(
                 name: "セラミックス実験第一",
-                periods: [KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "情報工学系計算機室，GSIC情報棟 3階307号室"),
-                          KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "情報工学系計算機室，GSIC情報棟 3階308号室")],
+                periods: [
+                    KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "情報工学系計算機室，GSIC情報棟 3階307号室"),
+                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "情報工学系計算機室，GSIC情報棟 3階308号室"),
+                ],
                 year: 2022,
                 quarters: [1],
                 code: "MAT.C350",
@@ -73,7 +78,7 @@ final class TitechKyomuKitTests: XCTestCase {
                 name: "確率微分方程式",
                 periods: [
                     KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "W931"),
-                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "W931")
+                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "W931"),
                 ],
                 year: 2022,
                 quarters: [4],
@@ -88,7 +93,7 @@ final class TitechKyomuKitTests: XCTestCase {
                 name: "システム構築演習",
                 periods: [
                     KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "情報工学系計算機室"),
-                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "情報工学系計算機室")
+                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "情報工学系計算機室"),
                 ],
                 year: 2022,
                 quarters: [4],
@@ -98,11 +103,11 @@ final class TitechKyomuKitTests: XCTestCase {
             )
         )
     }
-    
+
     func testParseReportCheckPageEn() throws {
         let titechkyomu = TitechKyomu(urlSession: .shared)
         let htmlEn = try! String(contentsOf: Bundle.module.url(forResource: "ReportCheckResultEnglish", withExtension: "html")!)
-        
+
         let resultEn = try titechkyomu.parseReportCheckPage(html: htmlEn)
         XCTAssertEqual(
             resultEn[0],
@@ -110,7 +115,7 @@ final class TitechKyomuKitTests: XCTestCase {
                 name: "Spectroscopy",
                 periods: [
                     KyomuCoursePeriod(day: .monday, start: 11, end: 12, location: "S7-202(S000)"),
-                    KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202")
+                    KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202"),
                 ],
                 year: 2022,
                 quarters: [1],
@@ -138,7 +143,7 @@ final class TitechKyomuKitTests: XCTestCase {
                 name: "Stochastic differential equations",
                 periods: [
                     KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "W931"),
-                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "W931")
+                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "W931"),
                 ],
                 year: 2022,
                 quarters: [4],
@@ -153,7 +158,7 @@ final class TitechKyomuKitTests: XCTestCase {
                 name: "Workshop on System Implementation",
                 periods: [
                     KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "情報工学系計算機室"),
-                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "情報工学系計算機室")
+                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "情報工学系計算機室"),
                 ],
                 year: 2022,
                 quarters: [4],

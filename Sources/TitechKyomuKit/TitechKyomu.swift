@@ -1,8 +1,9 @@
 import Foundation
+import Kanna
+
 #if canImport(FoundationNetworking)
 import FoundationNetworking
 #endif
-import Kanna
 
 public enum TitechKyomuError: Error {
     case failedLogin
@@ -15,14 +16,14 @@ public struct TitechKyomu {
     public init(urlSession: URLSession, userAgent: String = TitechKyomu.defaultUserAgent) {
         self.httpClient = HTTPClientImpl(urlSession: urlSession, userAgent: userAgent)
     }
-    
+
     public func loginTopPage() async throws {
         let html = try await httpClient.send(TopPageRequest())
         if !(try parseTopPage(html: html)) {
             throw TitechKyomuError.failedLogin
         }
     }
-    
+
     public func fetchKyomuCourseData() async throws -> [KyomuCourse] {
         let html = try await httpClient.send(ReportCheckPageRequest())
         return try parseReportCheckPage(html: html)
@@ -36,12 +37,13 @@ public struct TitechKyomu {
 
     func parseReportCheckPage(html: String) throws -> [KyomuCourse] {
         let doc = try HTML(html: html, encoding: .utf8)
-        let title = doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl13_lblTerm")
+        let title =
+            doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl13_lblTerm")
             .first?
             .content?
             .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let year = Int(title.matches(#"^(\d+)"#)?.first?.first ?? "") ?? 0
-        
+
         return doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_grid tr:not(:first-of-type)").compactMap { row -> KyomuCourse? in
             let tds = row.css("td")
             guard let resultContent = tds[9].content, resultContent.contains("OK") || resultContent.contains("○") else {
@@ -49,8 +51,9 @@ public struct TitechKyomu {
             }
 
             let periodTd = tds[2]
-            let periodContent = periodTd.content?.trimmingCharacters(in: .whitespacesAndNewlines).filter({ !$0.isNewline}) ?? ""
-            let periodRegexpResult = periodContent
+            let periodContent = periodTd.content?.trimmingCharacters(in: .whitespacesAndNewlines).filter({ !$0.isNewline }) ?? ""
+            let periodRegexpResult =
+                periodContent
                 .matches("([日月火水木金土]|Sun|Mon|Tue|Wed|Thu|Fri|Sat)(\\d+)-(\\d+)\\s?(?:\\(([^()]+(\\([^()]+\\)[^()]*)*)\\))?") ?? []
             let periods = periodRegexpResult.map { result -> KyomuCoursePeriod in
                 KyomuCoursePeriod(
