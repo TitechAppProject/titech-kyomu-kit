@@ -8,11 +8,11 @@ public struct KyomuCourse: Equatable, Codable {
     public let code: String
     public let ocwId: String
     public let isForm8: Bool
-    
+
     static func convert2Quarters(_ str: String) -> [Int] {
         let str = str.replacingOccurrences(of: "Q", with: "")
             .replacingOccurrences(of: "[～〜~]", with: "-", options: .regularExpression)
-        
+
         if str.contains("-") {
             let res = str.split(separator: "-").compactMap { Int($0) }
             return res.count == 2 ? (res[0]...res[1]).map { $0 } : []
@@ -40,7 +40,7 @@ public enum DayOfWeek: Int, Codable, CaseIterable, Equatable {
     case thursday = 5
     case friday = 6
     case saturday = 7
-    
+
     static func convert(_ str: String) -> DayOfWeek {
         if str.contains("日") || str.contains("Sun") {
             return .sunday
