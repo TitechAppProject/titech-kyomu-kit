@@ -76,8 +76,9 @@ final class TitechKyomuKitTests: XCTestCase {
                 isForm8: false
             )
         )
+        XCTAssertFalse(resultJa.contains { $0.name == "半導体物性" })
         XCTAssertEqual(
-            resultJa[6],
+            resultJa[5],
             KyomuCourse(
                 name: "アルゴリズムとデータ構造",
                 periods: [],
@@ -89,7 +90,7 @@ final class TitechKyomuKitTests: XCTestCase {
             )
         )
         XCTAssertEqual(
-            resultJa[7],
+            resultJa[6],
             KyomuCourse(
                 name: "確率微分方程式",
                 periods: [
@@ -104,7 +105,7 @@ final class TitechKyomuKitTests: XCTestCase {
             )
         )
         XCTAssertEqual(
-            resultJa[8],
+            resultJa[7],
             KyomuCourse(
                 name: "システム構築演習",
                 periods: [
@@ -141,8 +142,9 @@ final class TitechKyomuKitTests: XCTestCase {
             )
         )
         XCTAssertFalse(resultEn.contains { $0.name == "Solid State Physics (Lattice)" })
+        XCTAssertFalse(resultEn.contains { $0.name == "Semiconductor Physics" })
         XCTAssertEqual(
-            resultEn[6],
+            resultEn[5],
             KyomuCourse(
                 name: "Introduction to Algorithms and Data Structures",
                 periods: [],
@@ -154,7 +156,7 @@ final class TitechKyomuKitTests: XCTestCase {
             )
         )
         XCTAssertEqual(
-            resultEn[7],
+            resultEn[6],
             KyomuCourse(
                 name: "Stochastic differential equations",
                 periods: [
@@ -169,7 +171,7 @@ final class TitechKyomuKitTests: XCTestCase {
             )
         )
         XCTAssertEqual(
-            resultEn[8],
+            resultEn[7],
             KyomuCourse(
                 name: "Workshop on System Implementation",
                 periods: [

@@ -56,7 +56,7 @@ public struct TitechKyomu {
                 }
             )?[yearReference] ?? 0
 
-        return doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_grid tr:not(:first-of-type)").compactMap { row -> KyomuCourse? in
+        return doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_grid tr:not(:first-of-type):not(.timetableFukyoka)").compactMap { row -> KyomuCourse? in
             let tds = row.css("td")
             guard let resultContent = tds[9].content, resultContent.contains("OK") || resultContent.contains("○") else {
                 return nil
