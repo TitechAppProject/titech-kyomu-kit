@@ -41,6 +41,7 @@ final class TitechKyomuKitTests: XCTestCase {
                 quarters: [1],
                 code: "MAT.C302",
                 ocwId: "202202171",
+                teachers: ["矢野 哲司", "北沢 信章"],
                 isForm8: false
             )
         )
@@ -57,6 +58,7 @@ final class TitechKyomuKitTests: XCTestCase {
                 quarters: [1],
                 code: "MAT.C350",
                 ocwId: "202202185",
+                teachers: ["松下 伸広", "山口 晃"],
                 isForm8: false
             )
         )
@@ -73,6 +75,7 @@ final class TitechKyomuKitTests: XCTestCase {
                 quarters: [1],
                 code: "MAT.C301",
                 ocwId: "202202170",
+                teachers: ["鶴見 敬章", "保科 拓也"],
                 isForm8: false
             )
         )
@@ -86,6 +89,7 @@ final class TitechKyomuKitTests: XCTestCase {
                 quarters: [2],
                 code: "MCS.T213",
                 ocwId: "202202382",
+                teachers: ["森 立平"],
                 isForm8: false
             )
         )
@@ -101,6 +105,7 @@ final class TitechKyomuKitTests: XCTestCase {
                 quarters: [4],
                 code: "MCS.T419",
                 ocwId: "202217437",
+                teachers: ["中野 張", "三好 直人"],
                 isForm8: true
             )
         )
@@ -116,6 +121,7 @@ final class TitechKyomuKitTests: XCTestCase {
                 quarters: [4],
                 code: "CSC.T375",
                 ocwId: "202202449",
+                teachers: ["小野 峻佑", "田村 康将"],
                 isForm8: false
             )
         )
@@ -138,6 +144,7 @@ final class TitechKyomuKitTests: XCTestCase {
                 quarters: [1],
                 code: "MAT.C302",
                 ocwId: "202202171",
+                teachers: ["Yano Tetsuji", "Kitazawa Nobuaki"],
                 isForm8: false
             )
         )
@@ -152,6 +159,7 @@ final class TitechKyomuKitTests: XCTestCase {
                 quarters: [2],
                 code: "MCS.T213",
                 ocwId: "202202382",
+                teachers: ["Mori Ryuhei"],
                 isForm8: false
             )
         )
@@ -167,6 +175,7 @@ final class TitechKyomuKitTests: XCTestCase {
                 quarters: [4],
                 code: "MCS.T419",
                 ocwId: "202217437",
+                teachers: ["Nakano Yumiharu", "Miyoshi Naoto"],
                 isForm8: true
             )
         )
@@ -182,6 +191,7 @@ final class TitechKyomuKitTests: XCTestCase {
                 quarters: [4],
                 code: "CSC.T375",
                 ocwId: "202202449",
+                teachers: ["Ono Shunsuke", "Tamura Yasumasa"],
                 isForm8: false
             )
         )
