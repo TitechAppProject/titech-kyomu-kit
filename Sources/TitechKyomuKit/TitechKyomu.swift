@@ -138,6 +138,15 @@ public struct TitechKyomu {
                     }
                 )?[ocwIdReference] ?? ""
 
+            let teachers = tds[7]
+                .innerHTML?
+                .components(separatedBy: "<br>")
+                .map { $0
+                    .trimmingCharacters(in: .whitespacesAndNewlines)
+                    .replacingOccurrences(of: "  他", with: "")
+                    .replacingOccurrences(of: "  et al.", with: "")
+                } ?? []
+
             return KyomuCourse(
                 name: tds[6].css(".showAtPrintDiv").first?.content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
                 periods: periods,
@@ -145,6 +154,7 @@ public struct TitechKyomu {
                 quarters: KyomuCourse.convert2Quarters(tds[1].content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""),
                 code: tds[5].content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
                 ocwId: ocwId,
+                teachers: teachers,
                 isForm8: tds[12].content?.contains("Form No.8") ?? false || tds[12].content?.contains("様式第８号") ?? false
             )
         }
