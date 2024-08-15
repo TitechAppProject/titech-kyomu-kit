@@ -35,10 +35,6 @@ protocol HTTPRequest {
 
 extension HTTPRequest {
     func generate(userAgent: String) -> URLRequest {
-        guard var components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
-            fatalError("Unable to create URL components")
-        }
-
         switch method {
         case .get:
             var request = URLRequest(url: url)

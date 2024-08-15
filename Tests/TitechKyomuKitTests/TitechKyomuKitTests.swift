@@ -148,6 +148,22 @@ final class TitechKyomuKitTests: XCTestCase {
                 isForm8: false
             )
         )
+        XCTAssertEqual(
+            resultEn[1],
+            KyomuCourse(
+                name: "Ceramics Laboratory I",
+                periods: [
+                    KyomuCoursePeriod(day: .monday, start: 5, end: 8, location: "S7-204, 207, 209"),
+                    KyomuCoursePeriod(day: .thursday, start: 5, end: 8, location: "S7-204, 207, 209"),
+                ],
+                year: 2022,
+                quarters: [1],
+                code: "MAT.C350",
+                ocwId: "202202185",
+                teachers: ["Matsushita Nobuhiro", "Yamaguchi Akira"],
+                isForm8: false
+            )
+        )
         XCTAssertFalse(resultEn.contains { $0.name == "Solid State Physics (Lattice)" })
         XCTAssertFalse(resultEn.contains { $0.name == "Semiconductor Physics" })
         XCTAssertEqual(
