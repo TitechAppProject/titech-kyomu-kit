@@ -10,7 +10,7 @@ final class TitechKyomuKitTestsOnProduction: XCTestCase {
     //            .name: "AUTH_SESSION_ID",
     //            .domain: ".titech.ac.jp",
     //            .path: "/",
-    //            .value: ""  // use actual AUTH_SESSION_ID value
+    //            .value: "",  // use actual AUTH_SESSION_ID value
     //        ]
     //    )!
     //
@@ -18,26 +18,24 @@ final class TitechKyomuKitTestsOnProduction: XCTestCase {
     //        TitechKyomu.changeToMockServer()
     //        let titechkyomu = TitechKyomu(urlSession: .shared)
     //        HTTPCookieStorage.shared.setCookie(cookie)
-    //        let resultLogin = try await titechkyomu.fetchTopPage()
-    //        XCTAssertTrue(resultLogin)
+    //        try await titechkyomu.loginTopPage()
     //    }
     //
     //    func testParseReportCheckPageJaOnProduction() async throws {
     //        TitechKyomu.changeToMockServer()
     //        let titechkyomu = TitechKyomu(urlSession: .shared)
     //        HTTPCookieStorage.shared.setCookie(cookie)
-    //        let resultLogin = try await titechkyomu.fetchTopPage()
-    //        XCTAssertTrue(resultLogin)
+    //        try await titechkyomu.loginTopPage()
     //        if let cookies = HTTPCookieStorage.shared.cookies {
     //            for cookie in cookies {
-    //                if (cookie.name == "Language" && cookie.value == "en-US") {
+    //                if cookie.name == "Language" && cookie.value == "en-US" {
     //                    HTTPCookieStorage.shared.deleteCookie(cookie)
     //                    let cookieJa = HTTPCookie(
     //                        properties: [
     //                            .name: "Language",
     //                            .domain: "kyomu0.gakumu.titech.ac.jp",
     //                            .path: "/",
-    //                            .value: "ja-JP"
+    //                            .value: "ja-JP",
     //                        ]
     //                    )!
     //                    HTTPCookieStorage.shared.setCookie(cookieJa)
@@ -49,10 +47,16 @@ final class TitechKyomuKitTestsOnProduction: XCTestCase {
     //            resultJa[0],
     //            KyomuCourse(
     //                name: "分光学",
-    //                periods: [KyomuCoursePeriod(day: .monday, start: 1, end: 2, location: "S7-202"),
-    //                          KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202")],
-    //                quarters: [1],
-    //                code: "MAT.C302"
+    //                periods: [
+    //                    KyomuCoursePeriod(day: .monday, start: 1, end: 2, location: "S7-202"),
+    //                    KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202"),
+    //                ],
+    //                year: 2024,
+    //                quarters: [4],
+    //                code: "MAT.C302",
+    //                ocwId: "202202171",
+    //                teachers: ["矢野 哲司", "北沢 信章"],
+    //                isForm8: false
     //            )
     //        )
     //    }
@@ -61,18 +65,17 @@ final class TitechKyomuKitTestsOnProduction: XCTestCase {
     //        TitechKyomu.changeToMockServer()
     //        let titechkyomu = TitechKyomu(urlSession: .shared)
     //        HTTPCookieStorage.shared.setCookie(cookie)
-    //        let resultLogin = try await titechkyomu.fetchTopPage()
-    //        XCTAssertTrue(resultLogin)
+    //        try await titechkyomu.loginTopPage()
     //        if let cookies = HTTPCookieStorage.shared.cookies {
     //            for cookie in cookies {
-    //                if (cookie.name == "Language" && cookie.value == "ja-JP") {
+    //                if cookie.name == "Language" && cookie.value == "ja-JP" {
     //                    HTTPCookieStorage.shared.deleteCookie(cookie)
     //                    let cookieEn = HTTPCookie(
     //                        properties: [
     //                            .name: "Language",
     //                            .domain: "kyomu0.gakumu.titech.ac.jp",
     //                            .path: "/",
-    //                            .value: "en-US"
+    //                            .value: "en-US",
     //                        ]
     //                    )!
     //                    HTTPCookieStorage.shared.setCookie(cookieEn)
@@ -80,10 +83,71 @@ final class TitechKyomuKitTestsOnProduction: XCTestCase {
     //            }
     //        }
     //        let resultEn = try await titechkyomu.fetchKyomuCourseData()
-    //        print(resultEn)
-    //        XCTAssertEqual(resultEn[0], KyomuCourse(name: "Spectroscopy", periods: [KyomuCoursePeriod(day: .monday, start: 1, end: 2, location: "S7-202"), KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202")], quarters: [1], code: "MAT.C302"))
-    //        XCTAssertTrue(resultEn.contains(KyomuCourse(name: "Solid State Physics (Lattice)", periods: [KyomuCoursePeriod(day: .monday, start: 3, end: 4, location: "S8-102"), KyomuCoursePeriod(day: .thursday, start: 3, end: 4, location: "S8-102")], quarters: [1], code: "MAT.P301")))
-    //        XCTAssertFalse(resultEn.contains(KyomuCourse(name: "Course that no longer exists", periods: [KyomuCoursePeriod(day: .monday, start: 3, end: 4, location: "S8-102"), KyomuCoursePeriod(day: .thursday, start: 3, end: 4, location: "S8-102")], quarters: [1], code: "MAT.P301")))
-    //        XCTAssertEqual(resultEn[7], KyomuCourse(name: "Introduction to Algorithms and Data Structures", periods: [], quarters: [2], code: "MCS.T213"))
+    //        XCTAssertEqual(
+    //            resultEn[0],
+    //            KyomuCourse(
+    //                name: "Spectroscopy",
+    //                periods: [
+    //                    KyomuCoursePeriod(day: .monday, start: 1, end: 2, location: "S7-202"),
+    //                    KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202"),
+    //                ],
+    //                year: 2024,
+    //                quarters: [4],
+    //                code: "MAT.C302",
+    //                ocwId: "202202171",
+    //                teachers: ["矢野 哲司", "北沢 信章"],
+    //                isForm8: false
+    //            )
+    //        )
+    //        XCTAssertTrue(
+    //            resultEn.contains(
+    //                KyomuCourse(
+    //                    name: "Spectroscopy",
+    //                    periods: [
+    //                        KyomuCoursePeriod(day: .monday, start: 1, end: 2, location: "S7-202"),
+    //                        KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202"),
+    //                    ],
+    //                    year: 2024,
+    //                    quarters: [4],
+    //                    code: "MAT.C302",
+    //                    ocwId: "202202171",
+    //                    teachers: ["矢野 哲司", "北沢 信章"],
+    //                    isForm8: false
+    //                )
+    //            )
+    //        )
+    //        XCTAssertFalse(
+    //            resultEn.contains(
+    //                KyomuCourse(
+    //                    name: "Spectroscopy",
+    //                    periods: [
+    //                        KyomuCoursePeriod(day: .monday, start: 1, end: 2, location: "S7-202"),
+    //                        KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202"),
+    //                    ],
+    //                    year: 2024,
+    //                    quarters: [4],
+    //                    code: "MAT.C302",
+    //                    ocwId: "202202171",
+    //                    teachers: ["矢野 哲司", "北沢 信章"],
+    //                    isForm8: false
+    //                )
+    //            )
+    //        )
+    //        XCTAssertEqual(
+    //            resultEn[7],
+    //            KyomuCourse(
+    //                name: "Spectroscopy",
+    //                periods: [
+    //                    KyomuCoursePeriod(day: .monday, start: 1, end: 2, location: "S7-202"),
+    //                    KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202"),
+    //                ],
+    //                year: 2024,
+    //                quarters: [4],
+    //                code: "MAT.C302",
+    //                ocwId: "202202171",
+    //                teachers: ["矢野 哲司", "北沢 信章"],
+    //                isForm8: false
+    //            )
+    //        )
     //    }
 }
