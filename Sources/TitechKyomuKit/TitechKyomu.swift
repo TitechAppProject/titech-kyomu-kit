@@ -138,13 +138,15 @@ public struct TitechKyomu {
                     }
                 )?[ocwIdReference] ?? ""
 
-            let teachers = tds[7]
+            let teachers =
+                tds[7]
                 .innerHTML?
                 .components(separatedBy: "<br>")
-                .map { $0
-                    .trimmingCharacters(in: .whitespacesAndNewlines)
-                    .replacingOccurrences(of: "  他", with: "")
-                    .replacingOccurrences(of: "  et al.", with: "")
+                .map {
+                    $0
+                        .trimmingCharacters(in: .whitespacesAndNewlines)
+                        .replacingOccurrences(of: "  他", with: "")
+                        .replacingOccurrences(of: "  et al.", with: "")
                 } ?? []
 
             return KyomuCourse(
