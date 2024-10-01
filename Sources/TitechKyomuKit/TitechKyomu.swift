@@ -39,7 +39,7 @@ public struct TitechKyomu {
     func parseReportCheckPage(html: String) throws -> [KyomuCourse] {
         let doc = try HTML(html: html, encoding: .utf8)
         let title =
-            doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl13_lblTerm")
+            doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl00_lblTerm")
             .first?
             .content?
             .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
