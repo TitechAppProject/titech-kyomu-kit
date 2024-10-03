@@ -40,6 +40,7 @@ public struct TitechKyomu {
         let doc = try HTML(html: html, encoding: .utf8)
         let title =
             doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl00_lblTerm, #ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl13_lblTerm")
+                // ...ctl00_lblTerm が2024/10時点、...ctl13_lblTerm が2024/9の東工大時代のCSSのIDです。今後も変更される可能性があります。
             .first?
             .content?
             .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
