@@ -213,4 +213,20 @@ final class TitechKyomuKitTests: XCTestCase {
         )
 
     }
+    
+    func testParseReportCheckPageJaISCT() throws {
+        let titechkyomu = TitechKyomu(urlSession: .shared)
+        let htmlJa = try! String(contentsOf: Bundle.module.url(forResource: "ReportCheckResultJapaneseISCT", withExtension: "html")!)
+        let resultJa = try titechkyomu.parseReportCheckPage(html: htmlJa)
+        XCTAssertTrue(resultJa.contains { $0.year == 2024 })
+    }
+    
+    func testParseReportCheckPageEnISCT() throws {
+        let titechkyomu = TitechKyomu(urlSession: .shared)
+        let htmlEn = try! String(contentsOf: Bundle.module.url(forResource: "ReportCheckResultEnglishISCT", withExtension: "html")!)
+        let resultEn = try titechkyomu.parseReportCheckPage(html: htmlEn)
+        XCTAssertTrue(resultEn.contains { $0.year == 2024 })
+    }
+    
+    
 }
