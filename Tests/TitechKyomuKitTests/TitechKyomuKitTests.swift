@@ -143,4 +143,105 @@ final class TitechKyomuKitTests: XCTestCase {
 
     }
     
+    func testParseReportCheckPageWhenTemporarySaveJa() throws {
+        let titechkyomu = TitechKyomu(urlSession: .shared)
+        let htmlJa = try! String(contentsOf: Bundle.module.url(forResource: "ReportCheckResultTemporarySaveJapanese", withExtension: "html")!)
+        let resultJa = try titechkyomu.parseReportCheckPage(html: htmlJa)
+        XCTAssertEqual(
+            resultJa[0],
+            KyomuCourse(
+                name: "学士特定課題研究（情報通信系）",
+                periods: [],
+                year: 2024,
+                quarters: [3, 4],
+                code: "ICT.Z389-02",
+                ocwId: "202411248",
+                teachers: ["各 教員"],
+                isForm8: false
+            )
+        )
+        XCTAssertEqual(
+            resultJa[1],
+            KyomuCourse(
+                name: "情報通信工学統合論発展",
+                periods: [
+                    KyomuCoursePeriod(day: .monday, start: 1, end: 2, location: "M-123(H111)"),
+                    KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "M-123(H111)"),
+                ],
+                year: 2024,
+                quarters: [3],
+                code: "ICT.A436",
+                ocwId: "202436674",
+                teachers: ["松本 隆太郎, 山田 功, 宮田 純子"],
+                isForm8: false
+            )
+        )
+        XCTAssertEqual(
+            resultJa[2],
+            KyomuCourse(
+                name: "人間情報システム概論II",
+                periods: [
+                    KyomuCoursePeriod(day: .monday, start: 1, end: 2, location: "G3-202(G311)"),
+                    KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "G3-202(G311)"),
+                ],
+                year: 2024,
+                quarters: [4],
+                code: "ICT.A418",
+                ocwId: "202404681",
+                teachers: ["永井 岳大, 山口 雅浩, 奥村 学"],
+                isForm8: false
+            )
+        )
+    }
+
+    func testParseReportCheckPageWhenTemporarySaveEn() throws {
+        let titechkyomu = TitechKyomu(urlSession: .shared)
+        let htmlEn = try! String(contentsOf: Bundle.module.url(forResource: "ReportCheckResultTemporarySaveEnglish", withExtension: "html")!)
+        let resultEn = try titechkyomu.parseReportCheckPage(html: htmlEn)
+        XCTAssertEqual(
+            resultEn[0],
+            KyomuCourse(
+                name: "Independent research project(ICT)",
+                periods: [],
+                year: 2024,
+                quarters: [3, 4],
+                code: "ICT.Z389-02",
+                ocwId: "202411248",
+                teachers: ["Teaching Staffs"],
+                isForm8: false
+            )
+        )
+        XCTAssertEqual(
+            resultEn[1],
+            KyomuCourse(
+                name: "Communications and Computer Engineering - Advanced Concepts",
+                periods: [
+                    KyomuCoursePeriod(day: .monday, start: 1, end: 2, location: "M-123(H111)"),
+                    KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "M-123(H111)"),
+                ],
+                year: 2024,
+                quarters: [3],
+                code: "ICT.A436",
+                ocwId: "202436674",
+                teachers: ["Matsumoto Ryutaroh, Yamada Isao, Miyata Sumiko"],
+                isForm8: false
+            )
+        )
+        XCTAssertEqual(
+            resultEn[2],
+            KyomuCourse(
+                name: "Human-Centric Information Systems II",
+                periods: [
+                    KyomuCoursePeriod(day: .monday, start: 1, end: 2, location: "G3-202(G311)"),
+                    KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "G3-202(G311)"),
+                ],
+                year: 2024,
+                quarters: [4],
+                code: "ICT.A418",
+                ocwId: "202404681",
+                teachers: ["Nagai Takehiro, Yamaguchi Masahiro, Okumura Manabu"],
+                isForm8: false
+            )
+        )
+    }
 }
