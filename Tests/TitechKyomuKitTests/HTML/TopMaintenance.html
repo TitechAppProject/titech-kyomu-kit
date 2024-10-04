@@ -2,40 +2,409 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head id="ctl00_Head1"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, pre-check=0, post-check=0" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="-1" /><meta name="robots" content="noindex" />
+<head id="ctl00_Head1"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, pre-check=0, post-check=0" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="-1" /><meta name="robots" content="noindex" /><meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.1/themes/redmond/jquery-ui.css" rel="stylesheet" />
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js" ></script>
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.3/jquery-ui.min.js" ></script>
-<link href="App_Themes/Default/base.css" type="text/css" rel="stylesheet" /><link href="App_Themes/Default/base2.css" type="text/css" rel="stylesheet" /><link href="App_Themes/Default/base3.css" type="text/css" rel="stylesheet" /><link href="App_Themes/Default/jquery.contextMenu.css" type="text/css" rel="stylesheet" /><link href="App_Themes/Default/popUp.css" type="text/css" rel="stylesheet" /><link href="App_Themes/Default/print.css" type="text/css" rel="stylesheet" /><link href="App_Themes/Default/StyleSheet.css" type="text/css" rel="stylesheet" /><title>
+    <style type="text/css">
+          
+        .resultUnitSuisho {
+            width: 100px;
+        }  
+        .resultUnitTani {
+            width: 70px;
+        }  
+        .resultUnitSeiseki {
+            width: 100px;
+        }  
+        .resultUnitGP {
+            width: 50px;
+        }  
+        .resultUnitYG {
+            width: 120px;
+        }
+
+        @media screen and (min-width: 700px) {
+            .mediaSP {
+                display: none;
+            }
+            .termSelector {
+                width: 100%;
+            }
+            .tblResultUnit {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 1300px) {
+        }
+
+        @media screen and (max-width: 700px) {
+            .mainContents {
+                padding: 5px;
+            }
+            #menuPrint {
+                display: none;
+            }
+            .termSelector {
+                width: 55%;
+            }
+            .tblResultUnit {
+                width: initial;
+            }
+
+            .contentsMenu ul {
+                max-width: 400px;
+            }
+
+            .mediaPC {
+                display: none;
+            }
+            .mediaSPflexCol {
+                flex-direction: column;
+            }
+
+            .resultUnitSuisho {
+                width: 40px;
+            }  
+            .resultUnitKamokuName {
+                width: 100px;
+            }
+            .resultUnitTani {
+                width: 40px;
+            }  
+            .resultUnitSeiseki {
+                width: 40px;
+            }  
+            .resultUnitGP {
+                width: 28px;
+            }  
+            .resultUnitYG {
+                width: 56px;
+                min-width: 56px;
+                max-width: 56px;
+            }   
+
+            .categorySort {
+                display: none;
+            }
+        }
+    </style>
+<link href="App_Themes/Default/base.css" type="text/css" rel="stylesheet" /><link href="App_Themes/Default/base2.css" type="text/css" rel="stylesheet" /><link href="App_Themes/Default/base3.css" type="text/css" rel="stylesheet" /><link href="App_Themes/Default/jquery.contextMenu.css" type="text/css" rel="stylesheet" /><link href="App_Themes/Default/popUp.css" type="text/css" rel="stylesheet" /><link href="App_Themes/Default/print.css" type="text/css" rel="stylesheet" /><link href="App_Themes/Default/StyleSheet.css" type="text/css" rel="stylesheet" /><link href="/Titech/Content/bootstrap.css?20180726" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/base.css?q=4&amp;d=20241004" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/base3.css?q" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/popUp.css?20241004" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/print.css?20241004" type="text/css" rel="stylesheet" /><title>
 	教務Webシステム
 </title></head>
 <body class="body">
-    <form name="aspnetForm" method="post" action="./Maintenance.aspx" id="aspnetForm" class="stage">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNzExNzcxNzAwD2QWAmYPZBYCAgMPZBYMAgEPDxYEHg1PbkNsaWVudENsaWNrZR4HVmlzaWJsZWhkZAICDw8WAh8AZWRkAgMPDxYCHwFoZGQCBA9kFgICAQ8PFgIfAWgWAh4Hb25jbGljawXvAWlmKCAhY29uZmlybSgn44Ot44Kw44Ki44Km44OI44KS44GX44G+44GZ44CCXG5cbk9L44KS44Kv44Oq44OD44Kv44GZ44KL44Go44Ot44Kw44Ki44Km44OI44GM5a6f6KGM44GV44KMXG7lrablhoXjg53jg7zjgr/jg6vjgbjpgbfnp7vjgZfjgb7jgZnjgIJcbuS4reaWreOBmeOCi+WgtOWQiOOBr+OAjOOCreODo+ODs+OCu+ODq+OAjeOCkuOCr+ODquODg+OCr+OBl+OBpuOBj+OBoOOBleOBhCcpIClyZXR1cm4gZmFsc2U7ZAIGDxYCHglpbm5lcmh0bWxlZAIHD2QWBgIBDxYCHwFoZAIDD2QWCAIFDxYCHwMFKTxiPjIwMjIvOS8yKOmHkSkgNDowMDwvYj4g772eIDxiPjg6NTA8L2I+ZAIHDxYCHwMFKTxiPjIwMjIvOS82KOeBqykgNDowMDwvYj4g772eIDxiPjg6NTA8L2I+ZAIJDxYCHwMFKTxiPjIwMjIvOS85KOmHkSkgNDowMDwvYj4g772eIDxiPjg6NTA8L2I+ZAILDw8WAh4EVGV4dAVO5q+O6YCx54Gr5puc5pel44O76YeR5puc5pel44GuNDowMC04OjUw44Gn44Oh44Oz44OG44OK44Oz44K544KS6KGM44GE44G+44GZ44CCZGQCBQ8PFgIeC05hdmlnYXRlVXJsBTtodHRwczovL3BvcnRhbC5uYXAuZ3NpYy50aXRlY2guYWMuanAvR2V0QWNjZXNzL1Jlc291cmNlTGlzdGRkZFiYALilUO8bj+eqsHtob/NmcGtl" />
+    <form name="aspnetForm" method="post" action="./maintenance.aspx" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_defaultButton')" id="aspnetForm" class="stage">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNzExNzcxNzAwD2QWAmYPZBYCAgMPZBYMAgIPDxYEHg1PbkNsaWVudENsaWNrZR4HVmlzaWJsZWhkZAIDDw8WAh8AZWRkAgQPDxYCHwFoZGQCBQ9kFgICAQ8PFgIfAWgWAh4Hb25jbGljawXvAWlmKCAhY29uZmlybSgn44Ot44Kw44Ki44Km44OI44KS44GX44G+44GZ44CCXG5cbk9L44KS44Kv44Oq44OD44Kv44GZ44KL44Go44Ot44Kw44Ki44Km44OI44GM5a6f6KGM44GV44KMXG7lrablhoXjg53jg7zjgr/jg6vjgbjpgbfnp7vjgZfjgb7jgZnjgIJcbuS4reaWreOBmeOCi+WgtOWQiOOBr+OAjOOCreODo+ODs+OCu+ODq+OAjeOCkuOCr+ODquODg+OCr+OBl+OBpuOBj+OBoOOBleOBhCcpIClyZXR1cm4gZmFsc2U7ZAIHDxYCHglpbm5lcmh0bWxlZAIID2QWBgIBDxYCHwFoZAIDD2QWCAIDDxYCHwMFKjxiPjIwMjQvMTAvOCjngaspIDQ6MDA8L2I+IO+9niA8Yj44OjUwPC9iPmQCBA8WAh8DBSs8Yj4yMDI0LzEwLzExKOmHkSkgNDowMDwvYj4g772eIDxiPjg6NTA8L2I+ZAIFDxYCHwMFKzxiPjIwMjQvMTAvMTUo54GrKSA0OjAwPC9iPiDvvZ4gPGI+ODo1MDwvYj5kAgYPDxYCHgRUZXh0BU7mr47pgLHngavmm5zml6Xjg7vph5Hmm5zml6Xjga40OjAwLTg6NTDjgafjg6Hjg7Pjg4bjg4rjg7PjgrnjgpLooYzjgYTjgb7jgZnjgIJkZAIFDw8WAh4LTmF2aWdhdGVVcmwFO2h0dHBzOi8vcG9ydGFsLm5hcC5nc2ljLnRpdGVjaC5hYy5qcC9HZXRBY2Nlc3MvUmVzb3VyY2VMaXN0ZGRkaY/PJ1Nrtwxsi75oWWbVHkaBfFQ=" />
+</div>
 
-<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="3255E3D9" />
-<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAQ8qM0QAOr+6sfK3i4HCDALfWTjPRLcMlc9d2cDJ2JRi3g2JCPx5gAZ8WI3GLHhg5iKsKjzlAcn0r1kDlVqMal1nxkq2DHIv8R4lVoIVJaweXHiMKQ=" />
-    <div class="headerPopup hideAtPrint">
-        <div class="logo left">
-            <a id="top" name="top" href='/Titech/Maintenance.aspx''>
-                <img id="ctl00_imgLogo" src="img/header_img02.jpg" alt="国立大学法人 東京工業大学" border="0" />
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/Titech/WebResource.axd?d=VHBoFProjhkKbZRr3Y-y7i9bj77rryqHDsGTjdY0P53zC01ueW_-2fp7wxRXyWSbtqDOyC50PwOIcldoVj0O1bRq9Nw1&amp;t=637814977746327080" type="text/javascript"></script>
+
+
+<script src="/Titech/WebResource.axd?d=HVFHX_7VLu4XOpE-6zx6i5FOqTFEzqlLitQp1loS1JGk25m2d-5BgqG46S4EQf1fUwnDfoUzjXpfPmsUZZvKW7aP6h01&amp;t=637814977746327080" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="3255E3D9" />
+	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0" />
+	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAQCW+WJ4BJxr1L/vZ2p2ycifWTjPRLcMlc9d2cDJ2JRi3g2JCPx5gAZ8WI3GLHhg5iKsKjzlAcn0r1kDlVqMal1M1QGR9MsyjxCk5SrgAd8cRvzXNg=" />
+</div>
+    <style type="text/css">
+        
+        
+        #imgLogo {
+                     display: none;
+                  }
+
+                                        
+        #ctl00_imgTop {
+            width: 401px;
+        }
+        .body, .footer {
+            background-color: #1c3177;
+        }
+        .headerPopup {
+            background-color: #1c3177;
+            border-bottom-color: #0691e8;
+        }
+        .footer {
+            color: #1c3177;
+            background-image: none;
+            border-top-width: 4px;
+            border-top-color: #0691e8;
+        }
+        .copyright {
+            text-align: right;
+            font-size: 9pt;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #858cb1;
+            margin: 4px;
+        }
+        .header_testSite,.header_testSite2,.header_testSite3,.header_testSite4 {
+            background-image: none !important;
+        }
+        
+        .topButton a{
+            background-image: none;
+            padding-left: 0px;
+            color: #fcfdff;
+        }
+        .topButton a:hover{
+            color: #feaa41;
+            color: #f9d62d;
+        }
+        .topButton .lblSeparator{
+            color: #c3c3c3;
+        }
+        .topButton .glyphicon{
+            margin-right: 5px;
+        }
+        
+        .noBorder td {
+            border-width: 0px !important;
+            border-style: none !important;
+        }
+        .noBorder2 td {
+            border-width: 0px !important;
+            border-style: none !important;
+        }
+        div.divTabOuter,div.tableSet02b {
+            background-color: #c8cddd !important;
+        }
+        div.divTabOuter {
+            background-color: #c8cddd !important;
+        }
+        .tabBody2 {
+            -webkit-box-shadow: 0px 4px 4px #afafaf;
+        }
+
+        
+        h1 {
+            background: linear-gradient(90deg, #272995, #0d19b7, #edbfa1) !important;
+        }
+        h2,h2.h2W
+        {
+            background-color: #FFFFFF;
+            margin-bottom: 10px;
+            border-right: solid 1px #b5bec7;
+            border-bottom: solid 1px #bec5cc;
+            /*-moz-box-shadow: 1px 3px 5px #ddd;
+            -webkit-box-shadow: 1px 3px 5px #ddd;*/
+        }
+
+
+
+         .tableSet02 {
+             background-image: none;
+             background-color: #dbe0e3 !important;
+             border: solid 1px #6287e4;
+         }
+         .tableSet01 th,.tableSet02 th {
+             background-color: #b5cbf5;
+             border: solid 1px #6766c7;
+    
+             border: solid 1px #85a0ba;
+             border: solid 1px #688DB9;
+             padding: 5px;
+         }
+         .tableSet01 td,.tableSet02 td {
+             border: solid 1px #6766c7;
+             border: solid 1px #85a0ba;
+             border: solid 1px #688DB9;
+         }
+         .tableSet02noTable {
+             background-image: none;
+             background-color: #dbe0e3 !important;
+             border: solid 1px #6287e4;
+         }
+         .noBorder td {
+             border-width: 0px !important;
+             border-style: none !important;
+         }
+         .noBorder2 td {
+             border-width: 0px !important;
+             border-style: none !important;
+         }
+         .divTabOuter,.tabBody {
+             -webkit-box-shadow: 0px 8px 8px #cfcfcf;
+         }
+         .tabBody2 {
+             -webkit-box-shadow: 0px 4px 4px #afafaf;
+         }
+
+
+         .contentsMenu {
+             border-bottom-width: 2px;
+         }
+         .contentsMenu,.typeBlue {
+             border-color: #6287e4;
+         }
+ 
+         .typeBlue {
+             background-color: #e2e7f1;
+             border-bottom-width: 0px;
+         }
+         .typeBlue:hover {
+             background-color: #eef1f7;
+         }
+
+         .actStatus {
+             background-color: #aee8ff;
+         }
+         .actStatus {
+             background-color: #aee8ff;
+         }
+
+         h1{
+             margin: 0px 0px 20px 0px;
+         }
+
+
+        .actStatus,.actStatusb {
+            background: linear-gradient(180deg, #97cff3, #bffdfa) !important;
+        }
+        .tableSet02 {
+            -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.1);
+        }
+        .divTabOuter .tableSet02:first-of-type {
+            -webkit-box-shadow: none;
+        }
+        .tableSet01 table:not(.tblPager,.searchTable,.searchTable2,.termSelector),.tableSet02 table:not(.tblPager,.noBorder,.noBorder2,.timetableColorSampleTbl,.tblFlat,.searchTable,.searchTable2,.termSelector) {
+            -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.1);
+        }
+        .popMenu2 {
+            box-shadow: rgba(0,0,0,0.4) 2px 6px 28px;
+
+            padding: 6px;
+            box-shadow: rgba(0, 0, 0, 0.4) 2px 6px 28px;background-color: rgb(141 169 219 / 50%); backdrop-filter: blur(2px);
+        }
+        td.tdPageSize {
+            border:none !important;
+        }
+
+
+        
+        
+
+            
+        
+
+        @media screen and (min-width: 700px) {
+            .mediaSP {
+                display: none;
+            }
+            .termSelector {
+                width: 100%;
+            }
+            .tblResultUnit {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            .mediaWide {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .mediaPC, .copyright {
+                display: none;
+            }
+            .mainContents {
+                padding: 5px;
+            }
+            #menuPrint {
+                display: none;
+            }
+            .termSelector {
+                width: 55%;
+            }
+            .tblResultUnit {
+                width: initial;
+            }
+
+            .contentsMenu ul {
+                max-width: 400px;
+            }
+
+            
+            .menuLv3 a {
+                border-right: solid 4px #fff;
+            }
+            
+
+            .mediaSPflexCol {
+                flex-direction: column;
+            }
+
+            .resultUnitSuisho {
+                width: 40px;
+            }  
+            .resultUnitKamokuName {
+                width: 100px;
+            }
+            .resultUnitTani {
+                width: 40px;
+            }  
+            .resultUnitSeiseki {
+                width: 40px;
+            }  
+            .resultUnitGP {
+                width: 28px;
+            }  
+            .resultUnitYG {
+                width: 56px;
+                min-width: 56px;
+                max-width: 56px;
+            }  
+
+            .categorySort {
+                display: none;
+            }
+        }
+    </style>
+    <div class="headerPopup hideAtPrint" style="display: flex">
+        <div class="logo">
+            <a id="top" name="top" href='/Titech/maintenance.aspx''>
+                <img id="imgLogo" src="img/header_img02.jpg" alt="国立大学法人 東京科学大学" style="border-width:0px;" />
+                <img id="imgLogoS" src="img/header_img02.png" alt="国立大学法人 東京科学大学" style="border-width:0px;" />
             </a>
         </div>
-        <div class="right topButton">
-            <div style="padding-top:3px; margin-right:10px;"><span>
-                                
-                                <a id="ctl00_ToEnglish" href="javascript:__doPostBack(&#39;ctl00$ToEnglish&#39;,&#39;&#39;)">English</a>
-                            </span>&nbsp;
-                            &nbsp; 
-                <span id="ctl00_lnkLogout" class="lnkLogout">
-                    
-                </span>
-            </div>
+            
+        <div class="topButton" style="margin-left: auto; margin-top: 5px; margin-right: 4px;">
+            
+            <a id="ctl00_ToEnglish" href="javascript:__doPostBack(&#39;ctl00$ToEnglish&#39;,&#39;&#39;)"><span class='glyphicon glyphicon-globe'></span>English</a>
+                
+            &nbsp; 
+            <span id="ctl00_lnkLogout">
+                
+            </span>
         </div>
     </div>
-    <div class="clearfix"/>
-    <div class="mainContents" id="MainContents" style="padding-top: 0px; padding-bottom: 20px;">
-        <div style="visibility: hidden; height:0px; margin-bottom:10px" class="hideAtPrint">
+
+    <div class="mainContents" id="MainContents" style="">
+        <div style="display: none; height:0px; margin-bottom:10px" class="hideAtPrint">
             <input type="submit" name="ctl00$defaultButton" value="" onclick="return false;" id="ctl00_defaultButton" />
         </div>
         <div id="shrinkPreventOuter" class="clearfix">
@@ -44,9 +413,14 @@
         </div>
         <span id="ctl00_lblMessage" class="alertMsg"></span>
         
+    <style type="text/css">
+        .mainContents h3 {
+            color: #fff;
+            padding-top: 4px;
+        }
+    </style>
     <div class="tableSet02 clearfix">
         <div>
-
             <span id="ctl00_ContentPlaceHolder1_lblContent" style="font-size: large">
                 <b>ただいまメンテナンス中です</b><br />
                 
@@ -64,19 +438,22 @@ ul.mainte li
 }
 </style>
 
-<h3>メンテナンス情報</h3>
-<div style="padding:5px;width:270px;background-color: ghostWhite;border:dotted 1px #569;">
+<h3 style="width: 310px">
+    <a href="Maintenance.aspx" target="_blank">メンテナンス情報 <span class='glyphicon glyphicon-new-window'></span></a>
+    
+</h3>
+<div style="padding:5px;width:310px;background-color: ghostWhite;border:dotted 1px #569;">
     <span class="comment">下記期間中はログインできません。</span>
     <div><!-- 直近3つのメンテナンス予定を表示する。 -->
     <ul style="padding:3px;list-style:none;" class="mainte">
-        <li><span id="ctl00_ContentPlaceHolder1_ucMpre_T1"><b>2022/9/2(金) 4:00</b> ～ <b>8:50</b></span></li>
-        <li><span id="ctl00_ContentPlaceHolder1_ucMpre_T2"><b>2022/9/6(火) 4:00</b> ～ <b>8:50</b></span></li>
-        <li><span id="ctl00_ContentPlaceHolder1_ucMpre_T3"><b>2022/9/9(金) 4:00</b> ～ <b>8:50</b></span></li>
+        <li><span id="ctl00_ContentPlaceHolder1_ucMpre_T1"><b>2024/10/8(火) 4:00</b> ～ <b>8:50</b></span></li>
+        <li><span id="ctl00_ContentPlaceHolder1_ucMpre_T2"><b>2024/10/11(金) 4:00</b> ～ <b>8:50</b></span></li>
+        <li><span id="ctl00_ContentPlaceHolder1_ucMpre_T3"><b>2024/10/15(火) 4:00</b> ～ <b>8:50</b></span></li>
     </ul>
     </div>
     <!-- メンテナンス情報フリーコメント -->
-    <div style="border:solid 1px #568;background-color:White;padding:5px;margin-top:3px;">
-    <textarea name="ctl00$ContentPlaceHolder1$ucMpre$txtMntFree" rows="2" cols="20" readonly="readonly" id="ctl00_ContentPlaceHolder1_ucMpre_txtMntFree">
+    <div class="mediaPC" style="border:solid 1px #568;background-color:White;padding:5px;margin-top:3px;">
+    <textarea name="ctl00$ContentPlaceHolder1$ucMpre$txtMntFree" rows="2" cols="20" readonly="readonly" id="ctl00_ContentPlaceHolder1_ucMpre_txtMntFree" style="border-style:None;height:65px;width:100%;">
 毎週火曜日・金曜日の4:00-8:50でメンテナンスを行います。</textarea>
     </div>
 </div>
@@ -92,15 +469,38 @@ ul.mainte li
         <br />
         <br />
         <br />
+    </div>
 
     </div>
-    <div class="footer">
-        <div>
-        
-                    <span id="spanServerName" style="color: #005396">003</span>
-                    
+
+    <div class="footer" style="clear: both;">
+        <div style="display: flex;  justify-content: space-between;">
+            <div style="width: 33.3%">&nbsp;</div>
+            <div style="width: 33.3%">
+                
             </div>
+            <div style="width: 33.3%;" class="copyright">
+                
+                    Copyright &copy; 2009-2024 Institute of Science Tokyo
+                
+            </div>
+        </div>
+
+        <span style="display: none">
+            104</span>
     </div>
-    </form>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+WebForm_AutoFocus('defaultButton');//]]>
+</script>
+</form>
 </body>
 </html>

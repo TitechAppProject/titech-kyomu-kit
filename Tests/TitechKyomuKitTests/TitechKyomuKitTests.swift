@@ -32,96 +32,52 @@ final class TitechKyomuKitTests: XCTestCase {
         XCTAssertEqual(
             resultJa[0],
             KyomuCourse(
-                name: "分光学",
+                name: "世界を知る：南・東南アジア",
                 periods: [
-                    KyomuCoursePeriod(day: .monday, start: 11, end: 12, location: "S7-202(S000)"),
-                    KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202"),
+                    KyomuCoursePeriod(day: .wednesday, start: 3, end: 4, location: ""),
                 ],
-                year: 2022,
-                quarters: [1],
-                code: "MAT.C302",
-                ocwId: "202202171",
-                teachers: ["矢野 哲司", "北沢 信章"],
+                year: 2024,
+                quarters: [3],
+                code: "LAH.A505",
+                ocwId: "202403782",
+                teachers: ["※田中 李歩"],
                 isForm8: false
             )
         )
-        XCTAssertFalse(resultJa.contains { $0.name == "固体物理学(格子系)" })
+        
         XCTAssertEqual(
             resultJa[1],
             KyomuCourse(
-                name: "セラミックス実験第一",
+                name: "半導体物性特論（材料）",
                 periods: [
-                    KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "情報工学系計算機室，GSIC情報棟 3階307号室"),
-                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "情報工学系計算機室，GSIC情報棟 3階308号室"),
+                    KyomuCoursePeriod(day: .tuesday, start: 1, end: 2, location: "J2-303(J234)"),
+                    KyomuCoursePeriod(day: .friday, start: 1, end: 2, location: "J2-303(J234)"),
                 ],
-                year: 2022,
-                quarters: [1],
-                code: "MAT.C350",
-                ocwId: "202202185",
-                teachers: ["松下 伸広", "山口 晃"],
-                isForm8: false
+                year: 2024,
+                quarters: [3],
+                code: "ESI.J442.L (MAT.C404)",
+                ocwId: "202402959",
+                teachers: ["真島 豊, 平松 秀典"],
+                isForm8: true // Check Form8
             )
         )
+        
+        // 特許の科目をNGに
+        XCTAssertFalse(resultJa.contains { $0.name == "知的情報資源の活用と特許" })
 
-        XCTAssertEqual(
-            resultJa[2],
-            KyomuCourse(
-                name: "結晶化学（C）",
-                periods: [
-                    KyomuCoursePeriod(day: .monday, start: 7, end: 10, location: "西2号館教養科目物理学実験室（Introductory Physics Laboratory）"),
-                    KyomuCoursePeriod(day: .friday, start: 5, end: 6, location: "S7-202"),
-                ],
-                year: 2022,
-                quarters: [1],
-                code: "MAT.C301",
-                ocwId: "202202170",
-                teachers: ["鶴見 敬章", "保科 拓也"],
-                isForm8: false
-            )
-        )
-        XCTAssertFalse(resultJa.contains { $0.name == "半導体物性" })
+        
         XCTAssertEqual(
             resultJa[5],
             KyomuCourse(
-                name: "アルゴリズムとデータ構造",
-                periods: [],
-                year: 2022,
-                quarters: [2],
-                code: "MCS.T213",
-                ocwId: "202202382",
-                teachers: ["森 立平"],
-                isForm8: false
-            )
-        )
-        XCTAssertEqual(
-            resultJa[6],
-            KyomuCourse(
-                name: "確率微分方程式",
+                name: "エネルギーイノベーション協創プロジェクト",
                 periods: [
-                    KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "W931"),
-                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "W931"),
+                    // 時間指定なし
                 ],
-                year: 2022,
-                quarters: [4],
-                code: "MCS.T419",
-                ocwId: "202217437",
-                teachers: ["中野 張", "三好 直人"],
-                isForm8: true
-            )
-        )
-        XCTAssertEqual(
-            resultJa[7],
-            KyomuCourse(
-                name: "システム構築演習",
-                periods: [
-                    KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "情報工学系計算機室"),
-                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "情報工学系計算機室"),
-                ],
-                year: 2022,
-                quarters: [4],
-                code: "CSC.T375",
-                ocwId: "202202449",
-                teachers: ["小野 峻佑", "田村 康将"],
+                year: 2024,
+                quarters: [3, 4],
+                code: "ESI.B502",
+                ocwId: "202404150",
+                teachers: ["コース主任, 渡部 卓雄, 難波江 裕太"],
                 isForm8: false
             )
         )
@@ -135,82 +91,56 @@ final class TitechKyomuKitTests: XCTestCase {
         XCTAssertEqual(
             resultEn[0],
             KyomuCourse(
-                name: "Spectroscopy",
+                name: "Area Studies: South and Southeast Asia",
                 periods: [
-                    KyomuCoursePeriod(day: .monday, start: 11, end: 12, location: "S7-202(S000)"),
-                    KyomuCoursePeriod(day: .thursday, start: 1, end: 2, location: "S7-202"),
+                    KyomuCoursePeriod(day: .wednesday, start: 3, end: 4, location: ""),
                 ],
-                year: 2022,
-                quarters: [1],
-                code: "MAT.C302",
-                ocwId: "202202171",
-                teachers: ["Yano Tetsuji", "Kitazawa Nobuaki"],
+                year: 2024,
+                quarters: [3],
+                code: "LAH.A505",
+                ocwId: "202403782",
+                teachers: ["※Tanaka Riho"],
                 isForm8: false
             )
         )
+        
         XCTAssertEqual(
             resultEn[1],
             KyomuCourse(
-                name: "Ceramics Laboratory I",
+                name: "Physics and Chemistry of Semiconductors",
                 periods: [
-                    KyomuCoursePeriod(day: .monday, start: 5, end: 8, location: "S7-204, 207, 209"),
-                    KyomuCoursePeriod(day: .thursday, start: 5, end: 8, location: "S7-204, 207, 209"),
+                    KyomuCoursePeriod(day: .tuesday, start: 1, end: 2, location: "J2-303(J234)"),
+                    KyomuCoursePeriod(day: .friday, start: 1, end: 2, location: "J2-303(J234)"),
                 ],
-                year: 2022,
-                quarters: [1],
-                code: "MAT.C350",
-                ocwId: "202202185",
-                teachers: ["Matsushita Nobuhiro", "Yamaguchi Akira"],
-                isForm8: false
+                year: 2024,
+                quarters: [3],
+                code: "ESI.J442.L (MAT.C404)",
+                ocwId: "202402959",
+                teachers: ["Majima Yutaka, Hiramatsu Hidenori"],
+                isForm8: true // Check Form8
             )
         )
-        XCTAssertFalse(resultEn.contains { $0.name == "Solid State Physics (Lattice)" })
-        XCTAssertFalse(resultEn.contains { $0.name == "Semiconductor Physics" })
+        
+        // 特許の科目をNGに
+        XCTAssertFalse(resultEn.contains { $0.name == "Utilization of Intelligent Information Resources and Patents" })
+
+        
         XCTAssertEqual(
             resultEn[5],
             KyomuCourse(
-                name: "Introduction to Algorithms and Data Structures",
-                periods: [],
-                year: 2022,
-                quarters: [2],
-                code: "MCS.T213",
-                ocwId: "202202382",
-                teachers: ["Mori Ryuhei"],
-                isForm8: false
-            )
-        )
-        XCTAssertEqual(
-            resultEn[6],
-            KyomuCourse(
-                name: "Stochastic differential equations",
+                name: "Energy innovation co-creative project",
                 periods: [
-                    KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "W931"),
-                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "W931"),
+                    // 時間指定なし
                 ],
-                year: 2022,
-                quarters: [4],
-                code: "MCS.T419",
-                ocwId: "202217437",
-                teachers: ["Nakano Yumiharu", "Miyoshi Naoto"],
-                isForm8: true
-            )
-        )
-        XCTAssertEqual(
-            resultEn[7],
-            KyomuCourse(
-                name: "Workshop on System Implementation",
-                periods: [
-                    KyomuCoursePeriod(day: .tuesday, start: 3, end: 4, location: "情報工学系計算機室"),
-                    KyomuCoursePeriod(day: .friday, start: 3, end: 4, location: "情報工学系計算機室"),
-                ],
-                year: 2022,
-                quarters: [4],
-                code: "CSC.T375",
-                ocwId: "202202449",
-                teachers: ["Ono Shunsuke", "Tamura Yasumasa"],
+                year: 2024,
+                quarters: [3, 4],
+                code: "ESI.B502",
+                ocwId: "202404150",
+                teachers: ["Head, Watanabe Takuo, Nabae Yuta"],
                 isForm8: false
             )
         )
 
     }
+    
 }
