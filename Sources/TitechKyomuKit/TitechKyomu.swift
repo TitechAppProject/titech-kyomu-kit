@@ -41,6 +41,7 @@ public struct TitechKyomu {
         let title =
             doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl00_lblTerm, #ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl13_lblTerm, #ctl00_ContentPlaceHolder1_ctl00_lblTerm")
             // ...ctl00_lblTerm が2024/10時点、...ctl13_lblTerm が2024/9の東工大時代のCSSのIDです。今後も変更される可能性があります。
+            // #ctl00_ContentPlaceHolder1_ctl00_lblTerm は履修登録状況が一時保存のときのIDです。 今後も変更される可能性があります。
             .first?
             .content?
             .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
