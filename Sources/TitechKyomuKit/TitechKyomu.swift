@@ -59,6 +59,10 @@ public struct TitechKyomu {
         return doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_grid tr:not(:first-of-type):not(.timetableFukyoka)").compactMap { row -> KyomuCourse? in
             let tds = row.css("td")
 
+            guard tds.count == 13 else {
+                return nil
+            }
+
             let isValid = if let resultContent = tds[10].content, resultContent.contains("OK") {
                 true
             } else {
