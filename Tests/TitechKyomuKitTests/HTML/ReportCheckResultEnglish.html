@@ -6,91 +6,7 @@
     <link href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.1/themes/redmond/jquery-ui.css" rel="stylesheet" />
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js" ></script>
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.3/jquery-ui.min.js" ></script>
-    <style type="text/css">
-          
-        .resultUnitSuisho {
-            width: 100px;
-        }  
-        .resultUnitTani {
-            width: 70px;
-        }  
-        .resultUnitSeiseki {
-            width: 100px;
-        }  
-        .resultUnitGP {
-            width: 50px;
-        }  
-        .resultUnitYG {
-            width: 120px;
-        }
-
-        @media screen and (min-width: 700px) {
-            .mediaSP {
-                display: none;
-            }
-            .termSelector {
-                width: 100%;
-            }
-            .tblResultUnit {
-                width: 100%;
-            }
-        }
-
-        @media screen and (max-width: 1300px) {
-        }
-
-        @media screen and (max-width: 700px) {
-            .mainContents {
-                padding: 5px;
-            }
-            #menuPrint {
-                display: none;
-            }
-            .termSelector {
-                width: 55%;
-            }
-            .tblResultUnit {
-                width: initial;
-            }
-
-            .contentsMenu ul {
-                max-width: 400px;
-            }
-
-            .mediaPC {
-                display: none;
-            }
-            .mediaSPflexCol {
-                flex-direction: column;
-            }
-
-            .resultUnitSuisho {
-                width: 40px;
-            }  
-            .resultUnitKamokuName {
-                width: 100px;
-            }
-            .resultUnitTani {
-                width: 40px;
-            }  
-            .resultUnitSeiseki {
-                width: 40px;
-            }  
-            .resultUnitGP {
-                width: 28px;
-            }  
-            .resultUnitYG {
-                width: 56px;
-                min-width: 56px;
-                max-width: 56px;
-            }   
-
-            .categorySort {
-                display: none;
-            }
-        }
-    </style>
-<link href="/Titech/Content/themes/base/jquery-ui.css" type="text/css" rel="stylesheet" /><link href="/Titech/Content/bootstrap.css?20180726" type="text/css" rel="stylesheet" /><link href="/Titech/Scripts/theme/base/jquery-ui.css" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/base.css?q=4&amp;d=20241003" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/base3.css?q" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/popUp.css?20241003" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/print.css?20241003" type="text/css" rel="stylesheet" /><link rel="icon" id="favicon" href="/Titech/img/favicon.ico" /><link href="/Titech/Content/bootstrap.css?20180726" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/base.css?q=4&amp;d=20241003" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/base3.css?q" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/popUp.css?20241003" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/print.css?20241003" type="text/css" rel="stylesheet" /><title>
+<link href="/Titech/Content/themes/base/jquery-ui.css" type="text/css" rel="stylesheet" /><link href="/Titech/Content/bootstrap.css?20180726" type="text/css" rel="stylesheet" /><link href="/Titech/Scripts/theme/base/jquery-ui.css" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/base.css?q=250415&amp;d=20250502" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/base2.css?q=2504285&amp;d=20250502" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/popUp.css?20250502" type="text/css" rel="stylesheet" /><link href="/Titech/App_Themes/Default/print.css?20250502" type="text/css" rel="stylesheet" /><link rel="icon" id="favicon" href="/Titech/img/favicon.ico" /><title>
 	Report check　result 
 </title></head>
 <body class="body">
@@ -98,8 +14,7 @@
 <div>
 <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
 <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
-<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMjA3NzU1MTQ4NQ9kFgJmD2QWAgIDDxYCHgZhY3Rpb24FDVBJRDFfM18xLmFzcHgWDAICDw8WAh4NT25DbGllbnRDbGlja2VkZAIDDw8WBB8BZR4HVmlzaWJsZWhkZAIEDw8WBB4EVGV4dAUBfB8CaGRkAgUPZBYCAgEPDxYCHwJoFgIeB29uY2xpY2sFowFpZiggIWNvbmZpcm0oJ0xvZyBvdXRcblxuSWYgeW91IGNsaWNrIE9LLCB5b3Ugd2lsbCBsb2dvdXQgYW5kIGp1bXAgdG8gdGhlIFNjaWVuY2UgVG9reW8gUG9ydGFsLlxuXG5QcmVzc+OAgENBTkNFTOOAgGlmIHlvdSBkbyBOT1Qgd2lzaCB0byBsb2cgb3V0LicpIClyZXR1cm4gZmFsc2U7ZAIHDxYCHglpbm5lcmh0bWxlZAIID2QWBAIBDxYCHwMFFlJlcG9ydCBjaGVja+OAgHJlc3VsdCBkAgMPZBYIZg9kFgYCAQ8WAh8CaBYEAgEPZBYCZg9kFgRmD2QWBAIBDw8WAh8DBQ5PSyB0byByZWdpc3RlcmRkAgMPDxYEHwMFBUVycm9yHwJoZGQCAg9kFgQCAQ8WAh8CaGQCAw8PFgQfAwUeQ2hlY2sgdGhlIGNvbnRlbnQgYW5kIGNvcnJlY3QgHwJoZGQCAw8WAh8CaBYGAgEPDxYEHwMFIVJlcG9ydGVkIGNyZWRpdHMgYXJlIG92ZXIgbWF4aW11bR8CaGRkAgMPFgIfAmhkAgUPFgIfAmhkAgMPFgIfAmgWAgIBD2QWAmYPZBYEZg8WAh8CaGQCAg9kFgYCAQ8WAh8CaGQCAw8WAh8CaGQCBQ8WAh8CaGQCBQ8WAh8CaGQCAg9kFgICAQ9kFgYCAQ9kFgICAQ9kFgJmDxYCHgVjbGFzcwUHcGlja1VwMhYIAgEPDxYCHwMFFDIwMjQgQXV0dW1uIFNlbWVzdGVyZGQCAw8PFgIfAmhkZAIFDw8WBB8DBRZSZWZlciB0byBOZXh0IFNlbWVzdGVyHwJoZGQCBw9kFgICAxAQDxYCHgtfIURhdGFCb3VuZGdkEBUBFDIwMjQgU3ByaW5nIFNlbWVzdGVyFQEFMjAyNDEUKwMBZxYBZhQrAAEFAUBkAgUPZBYQAgEPFgIfAwUmTGliZXJhbCBhcnRzIGFuZCBiYXNpYyBzY2llbmNlIGNvdXJzZXNkAgsPFgIfAmhkAg0PFgIfAmhkAhsPFgIfAmhkAiMPDxYCHwNlZGQCKQ8PFgIfAwUCNDhkZAIvDw8WAh8DZWRkAjcPDxYCHwNlZGQCBw9kFgoCAQ8WBB4IUmVwbGFjZWRnHwMFBVRvdGFsZAIDDw8WAh8DBQE5ZGQCBQ8WBB8IZx8DBQhTZW1lc3RlcmQCBw8WBB8IZx8DBR1NYXhpbXVtIE51bWJlcjxici8+b2YgQ3JlZGl0c2QCCQ8PFgIfAwUBLWRkAgQPZBYEZg8WAh8CaGQCAw8WAh8CaGQCCA8PZDwrAAYAZBgBBStjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJENoZWNrUmVzdWx0MSRncmlkDzwrAAwBCAIBZKlqxhpq+fjsFObWJsh+F8Sg6J+r" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJODgyMTY2MTIxD2QWAmYPZBYCAgMPFgIeBmFjdGlvbgUNUElEMV8zXzEuYXNweBYMAgIPDxYCHg1PbkNsaWVudENsaWNrZWRkAgMPDxYEHwFlHgdWaXNpYmxlaGRkAgQPDxYEHgRUZXh0BQF8HwJoZGQCBQ9kFgICAQ8PFgIfAmgWAh4Hb25jbGljawWjAWlmKCAhY29uZmlybSgnTG9nIG91dFxuXG5JZiB5b3UgY2xpY2sgT0ssIHlvdSB3aWxsIGxvZ291dCBhbmQganVtcCB0byB0aGUgU2NpZW5jZSBUb2t5byBQb3J0YWwuXG5cblByZXNz44CAQ0FOQ0VM44CAaWYgeW91IGRvIE5PVCB3aXNoIHRvIGxvZyBvdXQuJykgKXJldHVybiBmYWxzZTtkAgcPFgIeCWlubmVyaHRtbGVkAggPZBYGAgEPFgIfAwUWUmVwb3J0IGNoZWNr44CAcmVzdWx0IGQCAw9kFgICAQ9kFgJmDxYCHgVjbGFzcwUHcGlja1VwMhYIAgEPDxYCHwMFFDIwMjUgU3ByaW5nIFNlbWVzdGVyZGQCAw8PFgIfAmhkZAIFDw8WBB8DBRZSZWZlciB0byBOZXh0IFNlbWVzdGVyHwJoZGQCBw8WAh8CaBYCAgMQEA8WAh4LXyFEYXRhQm91bmRnZBAVABUAFCsDABYAFCsAAGQCBQ9kFghmD2QWBgIDDxYCHwJoFgQCAQ9kFgJmD2QWBGYPZBYEAgEPDxYCHwMFDk9LIHRvIHJlZ2lzdGVyZGQCAw8PFgQfAwUFRXJyb3IfAmhkZAICD2QWBAIBDxYCHwJoZAIDDw8WBB8DBR5DaGVjayB0aGUgY29udGVudCBhbmQgY29ycmVjdCAfAmhkZAIDDxYCHwJoFgYCAQ8PFgQfAwUhUmVwb3J0ZWQgY3JlZGl0cyBhcmUgb3ZlciBtYXhpbXVtHwJoZGQCAw8WAh8CaGQCBQ8WAh8CaGQCBQ8WAh8CaBYCAgEPZBYCZg9kFgRmDxYCHwJoZAICD2QWBgIBDxYCHwJoZAIDDxYCHwJoZAIFDxYCHwJoZAIHDxYCHwJoZAICD2QWAgIBD2QWBgIBD2QWAgIBD2QWAmYPZBYEAgEPDxYCHwMFGuW5s+aIkDE55bm05bqm44CA5YmN5a2m5pyfZGQCBw9kFgICAxAQDxYCHwdnZBAVABUAFCsDABYAFCsAAGQCBQ9kFhACAQ8WAh8DBSZMaWJlcmFsIGFydHMgYW5kIGJhc2ljIHNjaWVuY2UgY291cnNlc2QCCw8WAh8CaGQCDQ8WAh8CaGQCGw8WAh8CaGQCIw8PFgIfA2VkZAIpDw8WAh8DBQI0OGRkAi8PDxYCHwNlZGQCNw8PFgIfA2VkZAIHD2QWCgIBDxYEHghSZXBsYWNlZGcfAwUFVG90YWxkAgMPDxYCHwMFAjIwZGQCBQ8WBB8IZx8DBQhTZW1lc3RlcmQCBw8WBB8IZx8DBR1NYXhpbXVtIE51bWJlcjxici8+b2YgQ3JlZGl0c2QCCQ8PFgIfAwUBLWRkAgQPZBYEZg8WAh8CaGQCAw8WAh8CaGQCCA8PZDwrAAYAZBgBBStjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJENoZWNrUmVzdWx0MSRncmlkDzwrAAwBCAIBZBHJfzgGCP5ZZULF+QJac1NOj02Z" />
 </div>
 
 <script type="text/javascript">
@@ -119,7 +34,7 @@ function __doPostBack(eventTarget, eventArgument) {
 </script>
 
 
-<script src="/Titech/WebResource.axd?d=VHBoFProjhkKbZRr3Y-y7i9bj77rryqHDsGTjdY0P53zC01ueW_-2fp7wxRXyWSbtqDOyC50PwOIcldoVj0O1bRq9Nw1&amp;t=637814977746327080" type="text/javascript"></script>
+<script src="/Titech/WebResource.axd?d=VHBoFProjhkKbZRr3Y-y7i9bj77rryqHDsGTjdY0P53zC01ueW_-2fp7wxRXyWSbtqDOyC50PwOIcldoVj0O1bRq9Nw1&amp;t=637639254254551885" type="text/javascript"></script>
 
 
 <script src="../../Scripts/jquery-1.11.1.min.js" type="text/javascript"></script>
@@ -129,7 +44,7 @@ function __doPostBack(eventTarget, eventArgument) {
 <script src="../../Scripts/noty/packaged/jquery.noty.packaged.min.js" type="text/javascript"></script>
 <script src="../../Scripts/jquery-ui.js" type="text/javascript"></script>
 <script src="../../Scripts/jquery.tbodyscroll.js" type="text/javascript"></script>
-<script src="../../Scripts/JScript.js?v=5&amp;t=20241003" type="text/javascript"></script>
+<script src="../../Scripts/JScript.js?v=250430&amp;t=20250502" type="text/javascript"></script>
 <script type="text/javascript">
 //<![CDATA[
 
@@ -146,279 +61,60 @@ $(function() {
 	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="21E50C06" />
 	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0" />
 	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0" />
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdABcyWBI2ejuMCQO59k4dyZPlql1Dkm9QGAViaiHWr6CTQ3g2JCPx5gAZ8WI3GLHhg5jc1jEhHuVTRE0VE8wR9yKq40Zexd6aUBTu4aGjHgHxyMV68N8CvkvE7FAur/TrbH0kt/XOMeWYnYCZZsNGENhr2o2EQ8228P3iW97CHtGIjjJCSmU8nEU2lOu0xCrYFOjJgJsCxu48H6MD6hySQJXNWOEKOVYEuSOD8qHYXrJWDselSgH+sO+mfj8QSx/m1x+Wqg9lClpmtEW7/SbztPozGVCLNnVnmjx48h2w0jqzn4UV8avhKAEF6nBwJyMlNlwb10TwwunFd3Veq5LmGaLv8v7gPXoywXrEsgRX8HMs1g6MVKeYnZHm85iAhCMLXyDjWHvRG6Dl7TxOaLVqFPiTZR/1wkyFSGUF1UeVb77mjAhsIjuS65qKwA+dne7CEWRqY59i+C5OedhGD9HGUBtgxQbS0yD9Thl7sm6WVjYxBxPdkjYAZhEsDxyU1hRZwzzqQ5Eh" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdABR/Fa89gaWsFYYPc63+77s8ql1Dkm9QGAViaiHWr6CTQ3g2JCPx5gAZ8WI3GLHhg5hegI6ryhwhwY0AUoI9pbE78oKzM4cISXaE3J7bC9J1YSS39c4x5ZidgJlmw0YQ2GvajYRDzbbw/eJb3sIe0YiOMkJKZTycRTaU67TEKtgU6MmAmwLG7jwfowPqHJJAlc1Y4Qo5VgS5I4PyodheslYOx6VKAf6w76Z+PxBLH+bXH5aqD2UKWma0Rbv9JvO0+jMZUIs2dWeaPHjyHbDSOrOfv6AFWUlAw5h/H9PD/O71PVptKiO0vzRnADejxBYlfv+FFfGr4SgBBepwcCcjJTZcG9dE8MLpxXd1XquS5hmi7/L+4D16MsF6xLIEV/BzLNYOjFSnmJ2R5vOYgIQjC18gxQbS0yD9Thl7sm6WVjYxBx0z7DglQLW9nV55bM1M/0DjkgBV" />
 </div>
     <style type="text/css">
-        
         
         #imgLogo {
                      display: none;
                   }
 
-                                        
-        #ctl00_imgTop {
-            width: 401px;
+        #MainContents {
+            padding: 15px;
         }
-        .body, .footer {
-            background-color: #1c3177;
-        }
+      
         .headerPopup {
             background-color: #1c3177;
             border-bottom-color: #0691e8;
         }
-        .footer {
-            color: #1c3177;
-            background-image: none;
-            border-top-width: 4px;
-            border-top-color: #0691e8;
-        }
-        .copyright {
-            text-align: right;
-            font-size: 9pt;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #858cb1;
-            margin: 4px;
-        }
-        .header_testSite,.header_testSite2,.header_testSite3,.header_testSite4 {
-            background-image: none !important;
-        }
-        
-        .topButton a{
-            background-image: none;
-            padding-left: 0px;
-            color: #fcfdff;
-        }
-        .topButton a:hover{
-            color: #feaa41;
-            color: #f9d62d;
-        }
-        .topButton .lblSeparator{
-            color: #c3c3c3;
-        }
-        .topButton .glyphicon{
-            margin-right: 5px;
-        }
-        
-        .noBorder td {
-            border-width: 0px !important;
-            border-style: none !important;
-        }
-        .noBorder2 td {
-            border-width: 0px !important;
-            border-style: none !important;
-        }
-        div.divTabOuter,div.tableSet02b {
-            background-color: #c8cddd !important;
-        }
-        div.divTabOuter {
-            background-color: #c8cddd !important;
-        }
-        .tabBody2 {
-            -webkit-box-shadow: 0px 4px 4px #afafaf;
-        }
-
-        
-        h1 {
-            background: linear-gradient(90deg, #272995, #0d19b7, #edbfa1) !important;
-        }
-        h2,h2.h2W
-        {
-            background-color: #FFFFFF;
-            margin-bottom: 10px;
-            border-right: solid 1px #b5bec7;
-            border-bottom: solid 1px #bec5cc;
-            /*-moz-box-shadow: 1px 3px 5px #ddd;
-            -webkit-box-shadow: 1px 3px 5px #ddd;*/
-        }
-
-
-
-         .tableSet02 {
-             background-image: none;
-             background-color: #dbe0e3 !important;
-             border: solid 1px #6287e4;
-         }
-         .tableSet01 th,.tableSet02 th {
-             background-color: #b5cbf5;
-             border: solid 1px #6766c7;
-    
-             border: solid 1px #85a0ba;
-             border: solid 1px #688DB9;
-             padding: 5px;
-         }
-         .tableSet01 td,.tableSet02 td {
-             border: solid 1px #6766c7;
-             border: solid 1px #85a0ba;
-             border: solid 1px #688DB9;
-         }
-         .tableSet02noTable {
-             background-image: none;
-             background-color: #dbe0e3 !important;
-             border: solid 1px #6287e4;
-         }
-         .noBorder td {
-             border-width: 0px !important;
-             border-style: none !important;
-         }
-         .noBorder2 td {
-             border-width: 0px !important;
-             border-style: none !important;
-         }
-         .divTabOuter,.tabBody {
-             -webkit-box-shadow: 0px 8px 8px #cfcfcf;
-         }
-         .tabBody2 {
-             -webkit-box-shadow: 0px 4px 4px #afafaf;
-         }
-
-
-         .contentsMenu {
-             border-bottom-width: 2px;
-         }
-         .contentsMenu,.typeBlue {
-             border-color: #6287e4;
-         }
- 
-         .typeBlue {
-             background-color: #e2e7f1;
-             border-bottom-width: 0px;
-         }
-         .typeBlue:hover {
-             background-color: #eef1f7;
-         }
-
-         .actStatus {
-             background-color: #aee8ff;
-         }
-         .actStatus {
-             background-color: #aee8ff;
-         }
 
          h1{
              margin: 0px 0px 20px 0px;
          }
 
-
-        .actStatus,.actStatusb {
-            background: linear-gradient(180deg, #97cff3, #bffdfa) !important;
-        }
-        .tableSet02 {
-            -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.1);
-        }
-        .divTabOuter .tableSet02:first-of-type {
-            -webkit-box-shadow: none;
-        }
-        .tableSet01 table:not(.tblPager,.searchTable,.searchTable2,.termSelector),.tableSet02 table:not(.tblPager,.noBorder,.noBorder2,.timetableColorSampleTbl,.tblFlat,.searchTable,.searchTable2,.termSelector) {
-            -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.1);
-        }
-        .popMenu2 {
-            box-shadow: rgba(0,0,0,0.4) 2px 6px 28px;
-
-            padding: 6px;
-            box-shadow: rgba(0, 0, 0, 0.4) 2px 6px 28px;background-color: rgb(141 169 219 / 50%); backdrop-filter: blur(2px);
-        }
-        td.tdPageSize {
-            border:none !important;
-        }
-
-
-        
-        
-
-            
-        
-
-        @media screen and (min-width: 700px) {
-            .mediaSP {
-                display: none;
-            }
-            .termSelector {
-                width: 100%;
-            }
-            .tblResultUnit {
-                width: 100%;
-            }
-        }
-
-        @media screen and (max-width: 1000px) {
-            .mediaWide {
-                display: none;
-            }
-        }
-
+         .topButton {
+             border-image: none;
+         }
+         
+      
         @media screen and (max-width: 700px) {
-            .mediaPC, .copyright {
-                display: none;
-            }
             .mainContents {
                 padding: 5px;
             }
-            #menuPrint {
-                display: none;
-            }
-            .termSelector {
-                width: 55%;
-            }
-            .tblResultUnit {
-                width: initial;
-            }
-
-            .contentsMenu ul {
-                max-width: 400px;
-            }
-
-            
-            .menuLv3 a {
-                border-right: solid 4px #fff;
-            }
-            
-
-            .mediaSPflexCol {
-                flex-direction: column;
-            }
-
-            .resultUnitSuisho {
-                width: 40px;
-            }  
-            .resultUnitKamokuName {
-                width: 100px;
-            }
-            .resultUnitTani {
-                width: 40px;
-            }  
-            .resultUnitSeiseki {
-                width: 40px;
-            }  
-            .resultUnitGP {
-                width: 28px;
-            }  
-            .resultUnitYG {
-                width: 56px;
-                min-width: 56px;
-                max-width: 56px;
-            }  
-
-            .categorySort {
-                display: none;
-            }
         }
+        
+        
+        
     </style>
-    <div class="headerPopup hideAtPrint" style="display: flex">
-        <div class="logo">
-            <a id="top" name="top" href='/Titech/Student/%E7%A7%91%E7%9B%AE%E7%94%B3%E5%91%8A/PID1_3_1.aspx''>
-                <img id="imgLogo" src="../../img/header_img02.jpg" alt="国立大学法人 東京科学大学" style="border-width:0px;" />
-                <img id="imgLogoS" src="../../img/header_img02.png" alt="国立大学法人 東京科学大学" style="border-width:0px;" />
-            </a>
-        </div>
+    
+    <div class="hideAtPrint">
+        <div class="headerPopup hideAtPrint" style="display: flex">
+            <div class="logo">
+                <a id="top" name="top" href='/Titech/Student/%E7%A7%91%E7%9B%AE%E7%94%B3%E5%91%8A/PID1_3_1.aspx''>
+                    <img id="imgLogo" src="../../img/header_img02.jpg" alt="国立大学法人 東京科学大学" style="border-width:0px;" />
+                    <img id="imgLogoS" src="../../img/header_img02.png" alt="国立大学法人 東京科学大学" style="border-width:0px;" />
+                </a>
+            </div>
             
-        <div class="topButton" style="margin-left: auto; margin-top: 5px; margin-right: 4px;">
-            <a id="ctl00_ToJapanese" href="javascript:__doPostBack(&#39;ctl00$ToJapanese&#39;,&#39;&#39;)"><span class='glyphicon glyphicon-globe'></span>Japanese</a>
-            
+            <div class="topButton hideAtPrint" style="margin-left: auto; margin-top: 2px; margin-right: 4px;">
+                <a id="ctl00_ToJapanese" href="javascript:__doPostBack(&#39;ctl00$ToJapanese&#39;,&#39;&#39;)"><span class='glyphicon glyphicon-globe'></span>Japanese</a>
                 
-            &nbsp; 
-            <span id="ctl00_lnkLogout">
                 
-            </span>
+                
+                <span id="ctl00_lnkLogout">
+                    
+                </span>
+            </div>
         </div>
     </div>
 
@@ -426,8 +122,8 @@ $(function() {
         <div style="display: none; height:0px; margin-bottom:10px" class="hideAtPrint">
             <input type="submit" name="ctl00$defaultButton" value="" onclick="return false;" id="ctl00_defaultButton" />
         </div>
-        <div id="shrinkPreventOuter" class="clearfix">
-            <div id="shrinkPreventInner">
+        <div id="shrinkPreventOuterX" class="clearfix">
+            <div id="shrinkPreventInnerX">
             </div>
         </div>
         <span id="ctl00_lblMessage" class="alertMsg"></span>
@@ -436,8 +132,27 @@ $(function() {
         Report check　result 
     </h1>
    
+    <div id="ctl00_ContentPlaceHolder1_divTerm" class="tableSet01" style="margin-bottom: 25px">
+    <div id="ctl00_ContentPlaceHolder1_ctl00_div" class="pickUp2">
+    <table class="termSelector" style="min-width: 350px;">
+        <tr>
+            <td width="30%" style="border-right-width:0px; vertical-align: middle">
+                <span id="ctl00_ContentPlaceHolder1_ctl00_lblTerm">2025 Spring Semester</span>
+            </td>
+            <td width="70%" align="right" class="hideAtPrint" style="text-align: right; font-size: small; color: Black; font-weight: normal;border-left-width:0px;">
+                &nbsp;&nbsp;&nbsp;
+                
+                
+            </td>
+        </tr>
+    </table>
+</div>
+</div>
     <div id="ctl00_ContentPlaceHolder1_CheckResult1_Panel1">
 	
+    <div id="ctl00_ContentPlaceHolder1_CheckResult1_divTerm" class="tableSet01" style="margin-bottom: 10px;">
+    </div>
+
     
     
     
@@ -466,7 +181,7 @@ $(function() {
             min-width: 150px;
         }
     }
-    @media screen and (max-width:600px) {
+    @media screen and (max-width:700px) {
         
         div.divFlex {
             flex-wrap: wrap;
@@ -482,31 +197,8 @@ $(function() {
     }
 </style>
 
-    <div id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_divTerm" class="tableSet01">
-    <div id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl00_div" class="pickUp2">
-    <table class="termSelector" style="min-width: 350px;">
-        <tr>
-            <td width="30%" style="border-right-width:0px; vertical-align: middle">
-                <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl00_lblTerm">2024 Autumn Semester</span>
-            </td>
-            <td width="70%" align="right" class="hideAtPrint" style="text-align: right; font-size: small; color: Black; font-weight: normal;border-left-width:0px;">
-                &nbsp;&nbsp;&nbsp;
-                
-                <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl00_spanHistory">
-                    <span class="mediaPC">
-                    Previous Semester</span>
-                    <select name="ctl00$ContentPlaceHolder1$CheckResult1$ctl08$ctl00$drpTerm" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$CheckResult1$ctl08$ctl00$drpTerm\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl00_drpTerm" class="drpTerm">
-	<option selected="selected" value="20241" Group class>2024 Spring Semester</option>
-
-</select>
-                    <input type="submit" name="ctl00$ContentPlaceHolder1$CheckResult1$ctl08$ctl00$btnDisp" value="View" id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_ctl00_btnDisp" class="btnDispTerm" />
-                </span>
-            </td>
-        </tr>
-    </table>
-</div>
-</div>
-<div class="tableSet02 clearfix" style="background-color: #dce8f3 !important; border-top: solid 1px #aab9e0 !important; border: solid 1px #aab9e0 !important; margin-top: 30px">
+    
+<div class="tableSet02 clearfix" style="background-color: #dce8f3 !important; border-top: solid 1px #aab9e0 !important; border: solid 1px #aab9e0 !important; margin-top: 10px">
     <h2>
                     Total reported credits
     </h2>
@@ -520,7 +212,7 @@ $(function() {
                         Total
                     </th>
                     <td class="tani">
-                        <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_lblTotalI">9</span>
+                        <span id="ctl00_ContentPlaceHolder1_CheckResult1_ctl08_lblTotalI">20</span>
                     </td>
                     <th style="background-color: #bbcc88">
                         Semester<br />
@@ -549,119 +241,87 @@ $(function() {
 	<table cellspacing="0" rules="all" border="1" id="ctl00_ContentPlaceHolder1_CheckResult1_grid" style="width:100%;border-collapse:collapse;">
 		<tr align="center">
 			<th scope="col">Undergraduate or <br/>Graduate School <br /><div class="categorySort">
-				<a title="Descending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl27&#39;,&#39;&#39;)">▼</a>/<a title="Ascending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl29&#39;,&#39;&#39;)">▲</a>
+				<a title="Descending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl24&#39;,&#39;&#39;)">▼</a>/<a title="Ascending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl26&#39;,&#39;&#39;)">▲</a>
 			</div></th><th scope="col">Q<br /><div class="categorySort">
-				<a title="Descending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl30&#39;,&#39;&#39;)">▼</a>/<a title="Ascending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl32&#39;,&#39;&#39;)">▲</a>
+				<a title="Descending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl27&#39;,&#39;&#39;)">▼</a>/<a title="Ascending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl29&#39;,&#39;&#39;)">▲</a>
 			</div></th><th class="mediaWide" scope="col">Class Days/Periods<br /><div class="categorySort">
-				<a title="Descending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl33&#39;,&#39;&#39;)">▼</a>/<a title="Ascending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl35&#39;,&#39;&#39;)">▲</a>
-			</div></th><th scope="col">Course Classification<br /><div class="categorySort">
-				<a title="Descending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl36&#39;,&#39;&#39;)">▼</a>/<a title="Ascending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl38&#39;,&#39;&#39;)">▲</a>
+				<a title="Descending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl30&#39;,&#39;&#39;)">▼</a>/<a title="Ascending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl32&#39;,&#39;&#39;)">▲</a>
 			</div></th><th class="mediaWide" scope="col" style="white-space:nowrap;">Level<br /><div class="categorySort">
-				<a title="Descending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl42&#39;,&#39;&#39;)">▼</a>/<a title="Ascending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl44&#39;,&#39;&#39;)">▲</a>
+				<a title="Descending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl33&#39;,&#39;&#39;)">▼</a>/<a title="Ascending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl35&#39;,&#39;&#39;)">▲</a>
 			</div></th><th scope="col">科目コード<br /><div class="categorySort">
-				<a title="Descending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl45&#39;,&#39;&#39;)">▼</a>/<a title="Ascending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl47&#39;,&#39;&#39;)">▲</a>
-			</div></th><th scope="col">Course Title</th><th class="mediaWide" scope="col">Instructor</th><th scope="col">Credit</th><th scope="col">Results <br /><div class="categorySort">
-				<a title="Descending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl48&#39;,&#39;&#39;)">▼</a>/<a title="Ascending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl50&#39;,&#39;&#39;)">▲</a>
+				<a title="Descending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl36&#39;,&#39;&#39;)">▼</a>/<a title="Ascending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl38&#39;,&#39;&#39;)">▲</a>
+			</div></th><th scope="col">Course Title</th><th scope="col">Credit</th><th scope="col">Course Classification<br /><div class="categorySort">
+				<a title="Descending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl39&#39;,&#39;&#39;)">▼</a>/<a title="Ascending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl41&#39;,&#39;&#39;)">▲</a>
+			</div></th><th class="mediaWide" scope="col">Instructor</th><th scope="col">Results <br /><div class="categorySort">
+				<a title="Descending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl42&#39;,&#39;&#39;)">▼</a>/<a title="Ascending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl44&#39;,&#39;&#39;)">▲</a>
 			</div></th><th scope="col">Error Details<br /><div class="categorySort">
-				<a title="Descending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl51&#39;,&#39;&#39;)">▼</a>/<a title="Ascending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl53&#39;,&#39;&#39;)">▲</a>
+				<a title="Descending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl45&#39;,&#39;&#39;)">▼</a>/<a title="Ascending" class="categorySort" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$CheckResult1$grid$ctl01$ctl47&#39;,&#39;&#39;)">▲</a>
 			</div></th><th scope="col">Error Details</th><th scope="col">Notes</th>
-		</tr><tr class="timetableBunkei">
-			<td class="minWidth50" align="center" style="width:80px;">
-                    Graduate School
-                </td><td align="center" class="  tdQuarter3" style="width:40px;">
-                    
-                    3Q
-                </td><td class="ttYoubi minWidth180 mediaWide" style="width:180px;">
-                    Wed3-4
-                </td><td class="minWidth100" style="width:120px;">Humanities and social science courses</td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">500</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
-                    LAH.A505
-                </td><td class="minWidth200" style="width:15%;">
-                    <div class="hideAtPrint">
-                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl02_HyperLink1" href="http://www.ocw.titech.ac.jp/index.php?module=General&amp;action=T0300&amp;JWC=202403782&amp;lang=EN&amp;vid=03" target="_blank">Area Studies: South and Southeast Asia </a>
-                    </div>
-                    <div class="showAtPrintDiv">
-                        Area Studies: South and Southeast Asia 
-                    </div>
-                    
-                    
-                </td><td class="minWidth100 mediaWide" style="width:12%;">
-                    ※Tanaka Riho
-                </td><td align="center" style="width:40px;white-space:nowrap;">
-                    1-0-0
-                </td><td align="center" style="width:40px;">
-                    OK to register
-                </td><td class="minWidth50" style="width:80px;">
-                    OK
-                </td><td class="minWidth50" style="width:120px;">
-                    
-                </td><td class="minWidth150">
-                    
-                    
-                    <div>
-                    </div>
-                    
-                    
-                </td>
 		</tr><tr>
-			<td class="minWidth50" align="center" style="width:80px;">
+			<td class="minWidth70" align="center" style="width:70px;">
                     Graduate School
-                </td><td align="center" class="  tdQuarter3" style="width:40px;">
+                </td><td align="center" class="  tdQuarter1" style="width:40px;">
                     
-                    3Q
-                </td><td class="ttYoubi minWidth180 mediaWide" style="width:180px;">
-                    Tue1-2 (J2-303(J234))<br/>Fri1-2 (J2-303(J234))
-                </td><td class="minWidth100" style="width:120px;">Major courses</td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">400</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
-                    ESI.J442.L (MAT.C404)
+                    1
+                </td><td class="tdYoubi mediaWide">
+                    Mon1-2 (S4-201
+(S421))<br/>Thu1-2 (S4-201
+(S421))
+                </td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">400</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
+                    ICT.A435
                 </td><td class="minWidth200" style="width:15%;">
                     <div class="hideAtPrint">
-                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl03_HyperLink1" href="http://www.ocw.titech.ac.jp/index.php?module=General&amp;action=T0300&amp;JWC=202402959&amp;lang=EN&amp;vid=03" target="_blank">Physics and Chemistry of Semiconductors </a>
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl02_HyperLink1" href="https://syllabus.s.isct.ac.jp/courses?jwc=202536673&amp;hl=en" target="_blank">Communications and Computer Engineering - Fundamentals </a>
+                    </div>
                     </div>
                     <div class="showAtPrintDiv">
-                        Physics and Chemistry of Semiconductors 
+                        Communications and Computer Engineering - Fundamentals 
                     </div>
                     
                     
-                </td><td class="minWidth100 mediaWide" style="width:12%;">
-                    Majima Yutaka, Hiramatsu Hidenori
                 </td><td align="center" style="width:40px;white-space:nowrap;">
                     2-0-0
+                </td><td class="minWidth100" style="width:120px;">Major courses</td><td class="minWidth100 mediaWide" style="width:12%;">
+                    Sasaki Hiroshi, Islam A K M Mahfuzul, Isshiki Tsuyoshi et al.
                 </td><td align="center" style="width:40px;">
                     OK to register
                 </td><td class="minWidth50" style="width:80px;">
-                    OK
+                    NG
                 </td><td class="minWidth50" style="width:120px;">
                     
                 </td><td class="minWidth150">
-                    
-                    L(Elective)
+                    <div>English</div>
+                    A(○)
                     <div>
-                    【Form No.8】</div>
+                    </div>
                     
                     
                 </td>
 		</tr><tr>
-			<td class="minWidth50" align="center" style="width:80px;">
+			<td class="minWidth70" align="center" style="width:70px;">
                     Graduate School
-                </td><td align="center" class="  tdQuarter3" style="width:40px;">
+                </td><td align="center" class="  tdQuarter1" style="width:40px;">
                     
-                    3Q
-                </td><td class="ttYoubi minWidth180 mediaWide" style="width:180px;">
-                    Tue3-4 (W2-401(W241))
-                </td><td class="minWidth100" style="width:120px;">Major courses</td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">400</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
-                    ESI.A407-01
+                    1
+                </td><td class="tdYoubi mediaWide">
+                    Mon3-4 (WL2-301
+(W631))<br/>Thu3-4 (WL2-301
+(W631))
+                </td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">400</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
+                    ICT.C401
                 </td><td class="minWidth200" style="width:15%;">
                     <div class="hideAtPrint">
-                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl04_HyperLink1" href="http://www.ocw.titech.ac.jp/index.php?module=General&amp;action=T0300&amp;JWC=202404069&amp;lang=EN&amp;vid=03" target="_blank">Energy system theory 大岡山</a>
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl03_HyperLink1" href="https://syllabus.s.isct.ac.jp/courses?jwc=202504669&amp;hl=en" target="_blank">Modern Cryptography </a>
                     </div>
                     <div class="showAtPrintDiv">
-                        Energy system theory 大岡山
+                        Modern Cryptography 
                     </div>
                     
                     
-                </td><td class="minWidth100 mediaWide" style="width:12%;">
-                    Kawabe Kenichi, Suekane Tetsuya, Yamada Akira et al.
                 </td><td align="center" style="width:40px;white-space:nowrap;">
-                    1-0-0
+                    2-0-0
+                </td><td class="minWidth100" style="width:120px;">Major courses</td><td class="minWidth100 mediaWide" style="width:12%;">
+                    Ogata Wakaha
                 </td><td align="center" style="width:40px;">
                     OK to register
                 </td><td class="minWidth50" style="width:80px;">
@@ -670,35 +330,296 @@ $(function() {
                     
                 </td><td class="minWidth150">
                     <div>English</div>
-                    A(○)
+                    L(Elective)
                     <div>
-                    【Form No.8】</div>
+                    </div>
                     
                     
                 </td>
 		</tr><tr>
-			<td class="minWidth50" align="center" style="width:80px;">
+			<td class="minWidth70" align="center" style="width:70px;">
                     Graduate School
-                </td><td align="center" class="  tdQuarter3" style="width:40px;">
+                </td><td align="center" class="  tdQuarter1" style="width:40px;">
                     
-                    3Q
-                </td><td class="ttYoubi minWidth180 mediaWide" style="width:180px;">
-                    Wed9-10 (W9-327(W936))
-                </td><td class="minWidth100" style="width:120px;">Humanities and social science courses</td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">400</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
-                    LAH.A422
+                    1
+                </td><td class="tdYoubi mediaWide">
+                    Mon7-8 (M-356(H132))<br/>Thu7-8 (M-356(H132))
+                </td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">400</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
+                    CSC.T438
                 </td><td class="minWidth200" style="width:15%;">
                     <div class="hideAtPrint">
-                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl05_HyperLink1" href="http://www.ocw.titech.ac.jp/index.php?module=General&amp;action=T0300&amp;JWC=202435660&amp;lang=EN&amp;vid=03" target="_blank">Human Resource Management </a>
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl04_HyperLink1" href="https://syllabus.s.isct.ac.jp/courses?jwc=202510377&amp;hl=en" target="_blank">Distributed Algorithms </a>
                     </div>
                     <div class="showAtPrintDiv">
-                        Human Resource Management 
+                        Distributed Algorithms 
                     </div>
                     
                     
-                </td><td class="minWidth100 mediaWide" style="width:12%;">
-                    ※Masuda Masayuki
+                </td><td align="center" style="width:40px;white-space:nowrap;">
+                    2-0-0
+                </td><td class="minWidth100" style="width:120px;">Major courses</td><td class="minWidth100 mediaWide" style="width:12%;">
+                    Defago Xavier
+                </td><td align="center" style="width:40px;">
+                    OK to register
+                </td><td class="minWidth50" style="width:80px;">
+                    OK
+                </td><td class="minWidth50" style="width:120px;">
+                    
+                </td><td class="minWidth150">
+                    <div>English</div>
+                    Outside the Graduate Major standard curriculum
+                    <div>
+                    </div>
+                    
+                    
+                </td>
+		</tr><tr>
+			<td class="minWidth70" align="center" style="width:70px;">
+                    Graduate School
+                </td><td align="center" class="  tdQuarter1" style="width:40px;">
+                    
+                    1
+                </td><td class="tdYoubi mediaWide">
+                    Tue1-2 (G1-103 (G114))<br/>Fri1-2 (G1-103 (G114))
+                </td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">500</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
+                    ICT.H503
+                </td><td class="minWidth200" style="width:15%;">
+                    <div class="hideAtPrint">
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl05_HyperLink1" href="https://syllabus.s.isct.ac.jp/courses?jwc=202504723&amp;hl=en" target="_blank">Speech Information Technology </a>
+                    </div>
+                    <div class="showAtPrintDiv">
+                        Speech Information Technology 
+                    </div>
+                    
+                    
+                </td><td align="center" style="width:40px;white-space:nowrap;">
+                    2-0-0
+                </td><td class="minWidth100" style="width:120px;">Major courses</td><td class="minWidth100 mediaWide" style="width:12%;">
+                    Shinozaki Takahiro
+                </td><td align="center" style="width:40px;">
+                    OK to register
+                </td><td class="minWidth50" style="width:80px;">
+                    OK
+                </td><td class="minWidth50" style="width:120px;">
+                    
+                </td><td class="minWidth150">
+                    <div>English</div>
+                    L(Elective)
+                    <div>
+                    </div>
+                    
+                    
+                </td>
+		</tr><tr>
+			<td class="minWidth70" align="center" style="width:70px;">
+                    Graduate School
+                </td><td align="center" class="  tdQuarter1" style="width:40px;">
+                    
+                    1
+                </td><td class="tdYoubi mediaWide">
+                    Tue3-4 (J2-203 (J221))<br/>Fri3-4 (J2-203 (J221))
+                </td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">500</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
+                    ICT.H507
+                </td><td class="minWidth200" style="width:15%;">
+                    <div class="hideAtPrint">
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl06_HyperLink1" href="https://syllabus.s.isct.ac.jp/courses?jwc=202504726&amp;hl=en" target="_blank">Virtual Reality and Interaction </a>
+                    </div>
+                    <div class="showAtPrintDiv">
+                        Virtual Reality and Interaction 
+                    </div>
+                    
+                    
+                </td><td align="center" style="width:40px;white-space:nowrap;">
+                    2-0-0
+                </td><td class="minWidth100" style="width:120px;">Major courses</td><td class="minWidth100 mediaWide" style="width:12%;">
+                    Hasegawa Shoichi
+                </td><td align="center" style="width:40px;">
+                    OK to register
+                </td><td class="minWidth50" style="width:80px;">
+                    OK
+                </td><td class="minWidth50" style="width:120px;">
+                    
+                </td><td class="minWidth150">
+                    <div>English</div>
+                    L(Elective)
+                    <div>
+                    </div>
+                    
+                    
+                </td>
+		</tr><tr>
+			<td class="minWidth70" align="center" style="width:70px;">
+                    Graduate School
+                </td><td align="center" class="  tdQuarter2" style="width:40px;">
+                    
+                    2
+                </td><td class="tdYoubi mediaWide">
+                    Mon1-2 (G5-105 (G511))<br/>Thu1-2 (G5-105 (G511))
+                </td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">400</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
+                    ICT.A406
+                </td><td class="minWidth200" style="width:15%;">
+                    <div class="hideAtPrint">
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl07_HyperLink1" href="https://syllabus.s.isct.ac.jp/courses?jwc=202504680&amp;hl=en" target="_blank">Human-Centric Information Systems I </a>
+                    </div>
+                    <div class="showAtPrintDiv">
+                        Human-Centric Information Systems I 
+                    </div>
+                    
+                    
+                </td><td align="center" style="width:40px;white-space:nowrap;">
+                    2-0-0
+                </td><td class="minWidth100" style="width:120px;">Major courses</td><td class="minWidth100 mediaWide" style="width:12%;">
+                    Funakoshi Kotaro, Koike Yasuharu, Yamaguchi Masahiro et al.
+                </td><td align="center" style="width:40px;">
+                    OK to register
+                </td><td class="minWidth50" style="width:80px;">
+                    OK
+                </td><td class="minWidth50" style="width:120px;">
+                    
+                </td><td class="minWidth150">
+                    <div>English</div>
+                    B(○)
+                    <div>
+                    </div>
+                    
+                    
+                </td>
+		</tr><tr>
+			<td class="minWidth70" align="center" style="width:70px;">
+                    Graduate School
+                </td><td align="center" class="  tdQuarter2" style="width:40px;">
+                    
+                    2
+                </td><td class="tdYoubi mediaWide">
+                    Mon3-4 (G1-103 (G114))
+                </td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">400</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
+                    ICT.D401.L (ESD.E407)
+                </td><td class="minWidth200" style="width:15%;">
+                    <div class="hideAtPrint">
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl08_HyperLink1" href="https://syllabus.s.isct.ac.jp/courses?jwc=202534821&amp;hl=en" target="_blank">Solving Social Issues with Cutting-Edge Technology </a>
+                    </div>
+                    <div class="showAtPrintDiv">
+                        Solving Social Issues with Cutting-Edge Technology 
+                    </div>
+                    
+                    
+                </td><td align="center" style="width:40px;white-space:nowrap;">
+                    0-1-0
+                </td><td class="minWidth100" style="width:120px;">Major courses</td><td class="minWidth100 mediaWide" style="width:12%;">
+                    Nakatani Momoko, Yamaguchi Masahiro, ※Kondo Takashi
+                </td><td align="center" style="width:40px;">
+                    OK to register
+                </td><td class="minWidth50" style="width:80px;">
+                    OK
+                </td><td class="minWidth50" style="width:120px;">
+                    
+                </td><td class="minWidth150">
+                    
+                    L(Elective)
+                    <div>
+                    </div>
+                    
+                    
+                </td>
+		</tr><tr>
+			<td class="minWidth70" align="center" style="width:70px;">
+                    Graduate School
+                </td><td align="center" class="  tdQuarter2" style="width:40px;">
+                    
+                    2
+                </td><td class="tdYoubi mediaWide">
+                    Tue3-4 (S3-215
+(S321))<br/>Fri3-4 (S3-215
+(S321))
+                </td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">400</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
+                    ICT.S407
+                </td><td class="minWidth200" style="width:15%;">
+                    <div class="hideAtPrint">
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl09_HyperLink1" href="https://syllabus.s.isct.ac.jp/courses?jwc=202504673&amp;hl=en" target="_blank">Wireless Signal Processing </a>
+                    </div>
+                    <div class="showAtPrintDiv">
+                        Wireless Signal Processing 
+                    </div>
+                    
+                    
+                </td><td align="center" style="width:40px;white-space:nowrap;">
+                    2-0-0
+                </td><td class="minWidth100" style="width:120px;">Major courses</td><td class="minWidth100 mediaWide" style="width:12%;">
+                    Fukawa Kazuhiko
+                </td><td align="center" style="width:40px;">
+                    OK to register
+                </td><td class="minWidth50" style="width:80px;">
+                    OK
+                </td><td class="minWidth50" style="width:120px;">
+                    
+                </td><td class="minWidth150">
+                    <div>English</div>
+                    L(Elective)
+                    <div>
+                    </div>
+                    
+                    
+                </td>
+		</tr><tr>
+			<td class="minWidth70" align="center" style="width:70px;">
+                    Graduate School
+                </td><td align="center" class="  tdQuarter2" style="width:40px;">
+                    
+                    2
+                </td><td class="tdYoubi mediaWide">
+                    Wed3-4 (G2-201(G223))
+                </td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">400</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
+                    LAH.S420-01
+                </td><td class="minWidth200" style="width:15%;">
+                    <div class="hideAtPrint">
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl10_HyperLink1" href="https://syllabus.s.isct.ac.jp/courses?jwc=202508468&amp;hl=en" target="_blank">Essence of Humanities and Social Sciences20:Western Thought 1</a>
+                    </div>
+                    <div class="showAtPrintDiv">
+                        Essence of Humanities and Social Sciences20:Western Thought 1
+                    </div>
+                    
+                    
                 </td><td align="center" style="width:40px;white-space:nowrap;">
                     1-0-0
+                </td><td class="minWidth100" style="width:120px;">Humanities and social science courses</td><td class="minWidth100 mediaWide" style="width:12%;">
+                    Bektas Yakup
+                </td><td align="center" style="width:40px;">
+                    OK to register
+                </td><td class="minWidth50" style="width:80px;">
+                    OK
+                </td><td class="minWidth50" style="width:120px;">
+                    
+                </td><td class="minWidth150">
+                    <div>English</div>
+                    
+                    <div>
+                    </div>
+                    
+                    
+                </td>
+		</tr><tr>
+			<td class="minWidth70" align="center" style="width:70px;">
+                    Graduate School
+                </td><td align="center" class="  tdQuarter2" style="width:40px;">
+                    
+                    2
+                </td><td class="tdYoubi mediaWide">
+                    Wed5-6
+                </td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">400</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
+                    ENT.C401-04
+                </td><td class="minWidth200" style="width:15%;">
+                    <div class="hideAtPrint">
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl11_HyperLink1" href="https://syllabus.s.isct.ac.jp/courses?jwc=202536241&amp;hl=en" target="_blank">Master's Career Development Basics B</a>
+                    </div>
+                    <div class="showAtPrintDiv">
+                        Master's Career Development Basics B
+                    </div>
+                    
+                    
+                </td><td align="center" style="width:40px;white-space:nowrap;">
+                    1-0-0
+                </td><td class="minWidth100" style="width:120px;">Entrepreneurship courses</td><td class="minWidth100 mediaWide" style="width:12%;">
+                    Wakayama Koji, Izumi Akira, Ito Sachiko et al.
                 </td><td align="center" style="width:40px;">
                     OK to register
                 </td><td class="minWidth50" style="width:80px;">
@@ -714,65 +635,65 @@ $(function() {
                     
                 </td>
 		</tr><tr>
-			<td class="minWidth50" align="center" style="width:80px;">
+			<td class="minWidth70" align="center" style="width:70px;">
                     Graduate School
-                </td><td align="center" class="  tdQuarter4" style="width:40px;">
+                </td><td align="center" class="  tdQuarter2" style="width:40px;">
                     
-                    4Q
-                </td><td class="ttYoubi minWidth180 mediaWide" style="width:180px;">
-                    Tue3-4 (M-B101（H102）)
-                </td><td class="minWidth100" style="width:120px;">Major courses</td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">400</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
-                    ESI.L402.L (EEE.G401)
+                    2
+                </td><td class="tdYoubi mediaWide">
+                    Wed7-8 (M-155(H1104))
+                </td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">400</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
+                    LAE.E452-01
                 </td><td class="minWidth200" style="width:15%;">
                     <div class="hideAtPrint">
-                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl06_HyperLink1" href="http://www.ocw.titech.ac.jp/index.php?module=General&amp;action=T0300&amp;JWC=202406906&amp;lang=EN&amp;vid=03" target="_blank">Utilization of Intelligent Information Resources and Patents </a>
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl12_HyperLink1" href="https://syllabus.s.isct.ac.jp/courses?jwc=202503675&amp;hl=en" target="_blank">TOEFL Seminar 14 1</a>
                     </div>
                     <div class="showAtPrintDiv">
-                        Utilization of Intelligent Information Resources and Patents 
+                        TOEFL Seminar 14 1
                     </div>
                     
                     
-                </td><td class="minWidth100 mediaWide" style="width:12%;">
-                    Wakabayashi Hitoshi, Oshima Yoichi, ※Ikuta Tetsuya
                 </td><td align="center" style="width:40px;white-space:nowrap;">
-                    1-0-0
+                    0-1-0
+                </td><td class="minWidth100" style="width:120px;">English language courses</td><td class="minWidth100 mediaWide" style="width:12%;">
+                    De Ferranti Hugh Barry Ziani
                 </td><td align="center" style="width:40px;">
-                    NG to register
+                    OK to register
                 </td><td class="minWidth50" style="width:80px;">
-                    NG
+                    OK
                 </td><td class="minWidth50" style="width:120px;">
                     
                 </td><td class="minWidth150">
+                    <div>English</div>
                     
-                    L(Elective)
                     <div>
                     </div>
                     
                     
                 </td>
 		</tr><tr>
-			<td class="minWidth50" align="center" style="width:80px;">
+			<td class="minWidth70" align="center" style="width:70px;">
                     Graduate School
-                </td><td align="center" class="  tdQuarter8" style="width:40px;">
+                </td><td align="center" class="  tdQuarter7" style="width:40px;">
                     
-                    3-4Q
-                </td><td class="ttYoubi minWidth180 mediaWide" style="width:180px;">
+                    1-2
+                </td><td class="tdYoubi mediaWide">
                     Seminar
-                </td><td class="minWidth100" style="width:120px;">Research seminars</td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">400</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
-                    ESI.Z492
+                </td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">400</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
+                    ICT.Z491
                 </td><td class="minWidth200" style="width:15%;">
                     <div class="hideAtPrint">
-                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl07_HyperLink1" href="http://www.ocw.titech.ac.jp/index.php?module=General&amp;action=T0300&amp;JWC=202436569&amp;lang=EN&amp;vid=03" target="_blank">Seminar in energy science and informatics F1 </a>
+                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl13_HyperLink1" href="https://syllabus.s.isct.ac.jp/courses?jwc=202504683&amp;hl=en" target="_blank">Seminar in Information and Communications Engineering S1 </a>
                     </div>
                     <div class="showAtPrintDiv">
-                        Seminar in energy science and informatics F1 
+                        Seminar in Information and Communications Engineering S1 
                     </div>
                     
                     
-                </td><td class="minWidth100 mediaWide" style="width:12%;">
-                    Academic Supervisor
                 </td><td align="center" style="width:40px;white-space:nowrap;">
-                    0-0-2
+                    0-2-0
+                </td><td class="minWidth100" style="width:120px;">Research seminars</td><td class="minWidth100 mediaWide" style="width:12%;">
+                    Academic Supervisor
                 </td><td align="center" style="width:40px;">
                     OK to register
                 </td><td class="minWidth50" style="width:80px;">
@@ -782,43 +703,6 @@ $(function() {
                 </td><td class="minWidth150">
                     
                     R(◎)
-                    <div>
-                    </div>
-                    
-                    
-                </td>
-		</tr><tr>
-			<td class="minWidth50" align="center" style="width:80px;">
-                    Graduate School
-                </td><td align="center" class="  tdQuarter8" style="width:40px;">
-                    
-                    3-4Q
-                </td><td class="ttYoubi minWidth180 mediaWide" style="width:180px;">
-                    To be announced
-                </td><td class="minWidth100" style="width:120px;">Research-related courses</td><td class="maxWidth70 mediaWide" align="center" style="width:70px;white-space:nowrap;">500</td><td class="maxWidth80" align="left" style="width:80px;white-space:nowrap;">
-                    ESI.B502
-                </td><td class="minWidth200" style="width:15%;">
-                    <div class="hideAtPrint">
-                        <a id="ctl00_ContentPlaceHolder1_CheckResult1_grid_ctl08_HyperLink1" href="http://www.ocw.titech.ac.jp/index.php?module=General&amp;action=T0300&amp;JWC=202404150&amp;lang=EN&amp;vid=03" target="_blank">Energy innovation co-creative project </a>
-                    </div>
-                    <div class="showAtPrintDiv">
-                        Energy innovation co-creative project 
-                    </div>
-                    
-                    
-                </td><td class="minWidth100 mediaWide" style="width:12%;">
-                    Head, Watanabe Takuo, Nabae Yuta
-                </td><td align="center" style="width:40px;white-space:nowrap;">
-                    0-0-1
-                </td><td align="center" style="width:40px;">
-                    OK to register
-                </td><td class="minWidth50" style="width:80px;">
-                    OK
-                </td><td class="minWidth50" style="width:120px;">
-                    
-                </td><td class="minWidth150">
-                    
-                    L(Elective)
                     <div>
                     </div>
                     
@@ -848,14 +732,12 @@ $(function() {
                 
             </div>
             <div style="width: 33.3%;" class="copyright">
-                
-                    Copyright &copy; 2009-2024 Institute of Science Tokyo
-                
+                Copyright &copy; 2009-2025 Institute of Science Tokyo
             </div>
         </div>
 
         <span style="display: none">
-            101</span>
+            103</span>
     </div>
     
 

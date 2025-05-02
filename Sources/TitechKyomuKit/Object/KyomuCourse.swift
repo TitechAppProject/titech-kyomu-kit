@@ -8,6 +8,7 @@ public struct KyomuCourse: Equatable, Codable {
     public let code: String
     public let ocwId: String
     public let teachers: [String]
+    public let isValid: Bool
     public let isForm8: Bool
 
     static func convert2Quarters(_ str: String) -> [Int] {

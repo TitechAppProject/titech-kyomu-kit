@@ -58,8 +58,11 @@ public struct TitechKyomu {
 
         return doc.css("#ctl00_ContentPlaceHolder1_CheckResult1_grid tr:not(:first-of-type):not(.timetableFukyoka)").compactMap { row -> KyomuCourse? in
             let tds = row.css("td")
-            guard let resultContent = tds[9].content, resultContent.contains("OK") || resultContent.contains("○") else {
-                return nil
+
+            let isValid = if let resultContent = tds[10].content, resultContent.contains("OK") {
+                true
+            } else {
+                false
             }
 
             let periodTd = tds[2]
@@ -126,10 +129,10 @@ public struct TitechKyomu {
 
             let ocwIdReference = Reference<String>()
             let ocwId =
-                tds[6].css("a").first?["href"]?
+                tds[5].css("a").first?["href"]?
                 .firstMatch(
                     of: Regex {
-                        "JWC="
+                        "jwc="
                         TryCapture(as: ocwIdReference) {
                             OneOrMore(.word)
                         } transform: {
@@ -139,7 +142,7 @@ public struct TitechKyomu {
                 )?[ocwIdReference] ?? ""
 
             let teachers =
-                tds[7]
+                tds[8]
                 .innerHTML?
                 .components(separatedBy: "<br>")
                 .map {
@@ -150,13 +153,14 @@ public struct TitechKyomu {
                 } ?? []
 
             return KyomuCourse(
-                name: tds[6].css(".showAtPrintDiv").first?.content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
+                name: tds[5].css(".showAtPrintDiv").first?.content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
                 periods: periods,
                 year: year,
                 quarters: KyomuCourse.convert2Quarters(tds[1].content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""),
-                code: tds[5].content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
+                code: tds[4].content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
                 ocwId: ocwId,
                 teachers: teachers,
+                isValid: isValid,
                 isForm8: tds[12].content?.contains("Form No.8") ?? false || tds[12].content?.contains("様式第８号") ?? false
             )
         }
