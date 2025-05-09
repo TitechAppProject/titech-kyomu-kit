@@ -63,7 +63,7 @@ public struct TitechKyomu {
                 return nil
             }
 
-            let isValid = if let resultContent = tds[10].content, resultContent.contains("OK") {
+            let isValid = if let resultContent = tds[10].content, resultContent.contains("OK") || resultContent.contains("○") {
                 true
             } else {
                 false
